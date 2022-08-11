@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ShiftWork.Backend",
-    "\\ShiftWork.Backend\\Models",
-    "\\ShiftWork.Backend\\Services"
+    "\\ShiftWork.Backend\\Models"
   ],
-  "SelectedNode": "\\ShiftWork.Backend\\Models\\Task.cs",
+  "SelectedNode": "\\ShiftWork.Backend\\Models",
   "PreviewInSolutionExplorer": false
 }
