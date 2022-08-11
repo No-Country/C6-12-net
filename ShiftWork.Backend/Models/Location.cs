@@ -2,8 +2,8 @@
 {
     public class Location
     {
-        public int IdLocation { get; set; }
-        public string  Address { get; set; }
+        public int LocationId { get; set; }
+        public string LocationName { get; set; }
         public DateTime CreatedDate { get; set; }
     }
 }
