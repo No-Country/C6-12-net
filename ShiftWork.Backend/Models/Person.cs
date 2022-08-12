@@ -9,5 +9,9 @@
         public DateTime CreatedDate { get; set; }
         public string Email { get; set; }   
         public int PhoneNumber { get; set; }
+        public List<Schedule> Schedules { get; set; }
+        public List<UserRole> UserRole { get; set; }
+
+        
     }
 }
