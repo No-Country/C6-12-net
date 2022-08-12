@@ -21,5 +21,13 @@ namespace ShiftWork.Backend.Data
             modelBuilder.Entity<Person>().ToTable("Person");
         }
 
+        public DbSet<ShiftWork.Backend.Models.Location>? Location { get; set; }
+
+        public DbSet<ShiftWork.Backend.Models.Area>? Area { get; set; }
+
+        public DbSet<ShiftWork.Backend.Models.Role>? Role { get; set; }
+
+        public DbSet<ShiftWork.Backend.Models.TaskShift>? TaskShift { get; set; }
+
     }
 }
