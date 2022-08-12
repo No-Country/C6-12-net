@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ShiftWork.Backend",
+    "\\ShiftWork.Backend\\Models"
   ],
-  "SelectedNode": "\\ShiftWorkApp.sln",
+  "SelectedNode": "\\ShiftWork.Backend\\Models",
   "PreviewInSolutionExplorer": false
 }
