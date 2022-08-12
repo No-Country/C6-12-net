@@ -1,8 +1,10 @@
-﻿using System;
-
-public class Class1
+﻿namespace ShiftWork.Backend.Models
 {
-	public Class1()
-	{
-	}
+    public class Task
+    {
+        public int TaskId { get; set; }
+        public string TaskName { get; set; }
+        public string Comment { get; set; }
+        public DateTime CreatedDate { get; set; }
+    }
 }
