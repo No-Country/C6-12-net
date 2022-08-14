@@ -26,6 +26,11 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
     //app.UseMigrationsEndPoint();
 }
+else
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 
 //using (var scope = app.Services.CreateScope())
