@@ -115,6 +115,57 @@ namespace ShiftWork.Backend.Migrations
                     b.ToTable("Role");
                 });
 
+            modelBuilder.Entity("ShiftWork.Backend.Models.Schedule", b =>
+                {
+                    b.Property<string>("ScheduleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("KeyCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Scheduledate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TagColor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaskShiftId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TaskShiftId1")
+                        .HasColumnType("int");
+
+                    b.HasKey("ScheduleId");
+
+                    b.HasIndex("AreaId");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("PersonId");
+
+                    b.HasIndex("TaskShiftId1");
+
+                    b.ToTable("Schedule");
+                });
+
             modelBuilder.Entity("ShiftWork.Backend.Models.TaskShift", b =>
                 {
                     b.Property<int>("TaskShiftId")
@@ -137,6 +188,112 @@ namespace ShiftWork.Backend.Migrations
                     b.HasKey("TaskShiftId");
 
                     b.ToTable("TaskShift");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.UserRole", b =>
+                {
+                    b.Property<string>("UserRoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("PersonId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserRoleId");
+
+                    b.HasIndex("PersonId1");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRole");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.Schedule", b =>
+                {
+                    b.HasOne("ShiftWork.Backend.Models.Area", "Area")
+                        .WithMany("Schedules")
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShiftWork.Backend.Models.Location", "Location")
+                        .WithMany("Schedules")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShiftWork.Backend.Models.Person", "Person")
+                        .WithMany("Schedules")
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShiftWork.Backend.Models.TaskShift", "TaskShift")
+                        .WithMany("Schedules")
+                        .HasForeignKey("TaskShiftId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Area");
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Person");
+
+                    b.Navigation("TaskShift");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.UserRole", b =>
+                {
+                    b.HasOne("ShiftWork.Backend.Models.Person", "Person")
+                        .WithMany("UserRole")
+                        .HasForeignKey("PersonId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShiftWork.Backend.Models.Role", "Role")
+                        .WithMany("UserRole")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.Area", b =>
+                {
+                    b.Navigation("Schedules");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.Location", b =>
+                {
+                    b.Navigation("Schedules");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.Person", b =>
+                {
+                    b.Navigation("Schedules");
+
+                    b.Navigation("UserRole");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.Role", b =>
+                {
+                    b.Navigation("UserRole");
+                });
+
+            modelBuilder.Entity("ShiftWork.Backend.Models.TaskShift", b =>
+                {
+                    b.Navigation("Schedules");
                 });
 #pragma warning restore 612, 618
         }

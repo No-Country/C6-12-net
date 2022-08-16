@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "grdMbesg2KS7SWdFxdZrDHEcEr5QBqHZcBCmjs+PsVE=",
+  "Source": "ShiftWork.Backend",
+  "BasePath": "_content/ShiftWork.Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
