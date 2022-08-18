@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:44405",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWorkApp\\ClientApp\\",
+"MaxTimeoutInSeconds": "120"
+}
+}
