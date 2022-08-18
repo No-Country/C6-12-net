@@ -10,6 +10,10 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { InicioComponent } from './components/inicio/inicio.component';
+// Import the module from the SDK
+import { AuthModule } from '@auth0/auth0-angular';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -17,13 +21,19 @@ import { environment } from '../environments/environment';
     AppComponent,
     ProductCreateComponent,
     ProductDetailsComponent,
-    ProductListComponent
+    ProductListComponent,
+    InicioComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule, 
+    AuthModule.forRoot({
+      domain: 'dev-ht5zjk2x.us.auth0.com',
+      clientId: 'xX6WLqgD6UgYRjZHKtxD5tlkgwVaqzBk'
+    }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
