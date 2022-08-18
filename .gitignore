@@ -8,3 +8,7 @@
 *.vsidx
 /ShiftWorkApp/obj
 *.zip
+ShiftWork.Backend/obj/Debug/net6.0/ShiftWork.Backend.GeneratedMSBuildEditorConfig.editorconfig
+*.cache
+*.props
+*.cache
