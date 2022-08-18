@@ -8,7 +8,8 @@
 *.vsidx
 /ShiftWorkApp/obj
 *.zip
-ShiftWork.Backend/obj/Debug/net6.0/ShiftWork.Backend.GeneratedMSBuildEditorConfig.editorconfig
-*.cache
-*.props
-*.cache
+.vs/ProjectEvaluation/shiftworkapp.metadata.v2
+.vs/ProjectEvaluation/shiftworkapp.projects.v2
+.vs/ShiftWorkApp/DesignTimeBuild/.dtbcache.v2
+ShiftWork.Backend/obj/Container/ContainerCreationResult.cache
+ShiftWork.Backend/obj/staticwebassets.pack.sentinel
