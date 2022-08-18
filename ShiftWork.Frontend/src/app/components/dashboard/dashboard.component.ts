@@ -6,6 +6,7 @@ import { PeopleService } from 'src/app/service/people.service';
 
 @Component({
   selector: 'app-dashboard',
+  //template: `<ejs-schedule></ejs-schedule>`,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
