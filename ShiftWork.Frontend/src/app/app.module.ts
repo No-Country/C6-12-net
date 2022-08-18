@@ -20,6 +20,8 @@ import { LocationComponent } from './components/location/location.component';
 import { RoleComponent } from './components/role/role.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { PeopleComponent } from './components/people/people.component';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
 
 
 @NgModule({
@@ -38,6 +40,9 @@ import { PeopleComponent } from './components/people/people.component';
   ],
   imports: [
     BrowserModule,
+    ScheduleModule,
+    ScheduleAllModule,
+    RecurrenceEditorAllModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
