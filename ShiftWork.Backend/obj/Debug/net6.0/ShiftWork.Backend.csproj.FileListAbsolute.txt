@@ -782,3 +782,4 @@ C:\projects\C6-12-net\ShiftWork.Backend\obj\Debug\net6.0\ShiftWork.Backend.pdb
 C:\projects\C6-12-net\ShiftWork.Backend\obj\Debug\net6.0\ShiftWork.Backend.genruntimeconfig.cache
 C:\projects\C6-12-net\ShiftWork.Backend\obj\Debug\net6.0\ref\ShiftWork.Backend.dll
 C:\Users\USUARIO\Source\Repos\C6-12-ne\ShiftWork.Backend\bin\Debug\net6.0\System.Web.Cors.dll
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\System.Web.Cors.dll

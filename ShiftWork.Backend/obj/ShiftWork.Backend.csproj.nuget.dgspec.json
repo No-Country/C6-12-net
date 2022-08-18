@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {}
+    "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {
+    "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
         "projectName": "ShiftWork.Backend",
-        "projectPath": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
-        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +87,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -96,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
