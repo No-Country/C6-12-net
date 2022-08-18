@@ -14,7 +14,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+    options =>
+    {
+        options.WithOrigins("*");
+    });
+});
 var app = builder.Build();
+
+
+
 
 
 // Configure the HTTP request pipeline.
@@ -43,9 +54,7 @@ else
 //}
 
 app.UseHttpsRedirection();
-
+app.UseCors();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
