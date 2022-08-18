@@ -9,7 +9,7 @@ export class LoginServiceService {
 myAppUrl:string;
 myApiUrl:string;
   constructor(private http:HttpClient) {
-    this.myApiUrl="api/people";
+    this.myApiUrl="api/People";
     this.myAppUrl="https://localhost:49153/"
    }
    login(usuario:Usuario){
