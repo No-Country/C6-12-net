@@ -11,5 +11,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>ShiftWork.Backend.Data.ShiftWorkContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <ActiveDebugProfile>Docker</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\projects\C6-12-net\ShiftWork.Backend\Properties\PublishProfiles\registry.hub.docker.com_waguirre82.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
