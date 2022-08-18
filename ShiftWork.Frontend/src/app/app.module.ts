@@ -15,6 +15,11 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { AuthModule, AuthService } from '@auth0/auth0-angular';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { environment as env } from '../environments/environment';
+import { AreaComponent } from './components/area/area.component';
+import { LocationComponent } from './components/location/location.component';
+import { RoleComponent } from './components/role/role.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { PeopleComponent } from './components/people/people.component';
 
 
 @NgModule({
@@ -24,7 +29,12 @@ import { environment as env } from '../environments/environment';
     ProductDetailsComponent,
     ProductListComponent,
     InicioComponent,
-    DashboardComponent
+    DashboardComponent,
+    AreaComponent,
+    LocationComponent,
+    RoleComponent,
+    ScheduleComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
