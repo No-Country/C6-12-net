@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Usuario } from '../../Model/usuario';
 import { HttpClient } from '@angular/common/http';
+import { PeopleService } from 'src/app/service/people.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,12 +11,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
   profileJson: string = "";
-  constructor(public auth: AuthService, protected http: HttpClient
+  constructor(public auth: AuthService, protected http: HttpClient,
+    peopleService: PeopleService
     ) { 
-      var url ='https://localhost:49155/api/People/';
-      this.http.get(url).subscribe(
+
+      var personId = '1';
+      peopleService.GetPerson(personId).subscribe(
         (data) => {
-          console.log('people',data);
+          console.log('person',data);
         }
       )
     }
