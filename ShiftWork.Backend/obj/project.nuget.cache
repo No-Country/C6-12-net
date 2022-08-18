@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
   "dgSpecHash": "YlMTHIlcTH4VmfUnwfsGUM6MPuDrNykSseOpKIL8KWUS+o3isiuZqhE1yzg15+SBxNpsdjbD86neXxovMegNGQ==",
-=======
-  "dgSpecHash": "y9i1f6iMsNmr3Vy7mEAko3eohXkSUDGuy3zg+COBD8DMs0BToUJo2lxraTeuVtkFOsKlTiyn0nX3amC8ZfRDwA==",
->>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
   "expectedPackageFiles": [
@@ -12,10 +8,7 @@
     "C:\\Users\\USUARIO\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
-<<<<<<< Updated upstream
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.9\\microsoft.aspnet.cors.5.2.9.nupkg.sha512",
-=======
->>>>>>> Stashed changes
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.build\\17.0.0\\microsoft.build.17.0.0.nupkg.sha512",
@@ -192,6 +185,12 @@
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\USUARIO\\Source\\Repos\\C6-12-ne\\ShiftWork.Backend\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",
