@@ -13,3 +13,5 @@
 .vs/ShiftWorkApp/DesignTimeBuild/.dtbcache.v2
 ShiftWork.Backend/obj/Container/ContainerCreationResult.cache
 ShiftWork.Backend/obj/staticwebassets.pack.sentinel
+*.cache
+*.v2
