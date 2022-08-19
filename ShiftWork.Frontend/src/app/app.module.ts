@@ -18,7 +18,7 @@ import { environment as env } from '../environments/environment';
 import { AreaComponent } from './components/area/area.component';
 import { LocationComponent } from './components/location/location.component';
 import { RoleComponent } from './components/role/role.component';
-import { ScheduleComponent } from './components/schedule/schedule.component';
+import { ScheduleShiftComponent } from './components/schedule/scheduleShift.component';
 import { PeopleComponent } from './components/people/people.component';
 import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
@@ -35,7 +35,7 @@ import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-an
     AreaComponent,
     LocationComponent,
     RoleComponent,
-    ScheduleComponent,
+    ScheduleShiftComponent,
     PeopleComponent
   ],
   imports: [
