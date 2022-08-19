@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService, AuthModule } from '@auth0/auth0-angular';
 import { LoginServiceService } from '../../service/login-service.service';
-import { Usuario } from '../../Model/usuario';
+
 
 @Component({
   selector: 'app-inicio',
