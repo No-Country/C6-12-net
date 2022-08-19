@@ -40,9 +40,17 @@ export class ScheduleShiftComponent {
   };
 
   public getEmployeeName(value: ResourceDetails): string {
-    return ((value as ResourceDetails).resourceData) ?
-      (value as ResourceDetails).resourceData[(value as ResourceDetails).resource.name!] as string
-      : value.resourceName!;
+    return (value as ResourceDetails).resourceData['Text'] as string;
+  }
+
+  public getEmployeeNameOld(value: ResourceDetails): string {
+    console.log(value);
+    const employeeName = ((value as ResourceDetails).resourceData) ?
+      (value as ResourceDetails).resourceData['Text'] as string
+      : value.resourceName;
+      console.log(employeeName);
+    return employeeName!;
+
   }
 
   public getEmployeeDesignation(value: ResourceDetails): string {
@@ -55,6 +63,8 @@ export class ScheduleShiftComponent {
     const resourceName: string = this.getEmployeeName(value);
     return resourceName.replace(' ', '-').toLowerCase();
   }
+
+
 
   logOut(){
     this.auth.logout();
