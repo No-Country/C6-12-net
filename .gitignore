@@ -17,3 +17,9 @@ ShiftWork.Backend/obj/staticwebassets.pack.sentinel
 *.v2
 *.v2
 *.editorconfig
+ShiftWork.Backend/obj/Debug/net6.0/ShiftWork.Backend.csproj.AssemblyReference.cache
+ShiftWork.Backend/obj/Debug/net6.0/ShiftWork.Backend.GeneratedMSBuildEditorConfig.editorconfig
+ShiftWork.Backend/obj/project.assets.json
+ShiftWork.Backend/obj/project.nuget.cache
+ShiftWork.Backend/obj/ShiftWork.Backend.csproj.nuget.dgspec.json
+ShiftWork.Backend/obj/ShiftWork.Backend.csproj.nuget.g.props
