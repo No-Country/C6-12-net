@@ -1,6 +1,8 @@
-export class Area{
-    AreaId?:number;
-    Region?:string;
-    Country?:string;
-    CreatedDate?:Date;
+import { Schedule } from './Schedule';
+export class AreaModel{
+    areaId?:number;
+    region?:string;
+    country?:string;
+    createdDate?:Date;
+    Schedules: any;
 }

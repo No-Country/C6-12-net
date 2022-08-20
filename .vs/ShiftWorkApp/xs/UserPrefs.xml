@@ -3,7 +3,14 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ShiftWorkApp" expanded="True" selected="True" />
+          <Node name="ShiftWorkApp" expanded="True">
+            <Node name="ShiftWork.Backend" expanded="True" selected="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
