@@ -1,6 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+//using AutoMapper.Extensions.Microsoft.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using ShiftWork.Backend.Data;
+using ShiftWork.Backend.DTOs;
+using ShiftWork.Backend.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ShiftWorkContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShiftWorkContext") ?? throw new InvalidOperationException("Connection string 'ShiftWorkContext' not found.")));
@@ -12,6 +18,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddAutoMapper(typeof(Program));
+//builder.Services.Add(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -22,7 +32,15 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 
-
+//var configuration = new MapperConfiguration(cfg =>
+//{
+//    cfg.CreateMap<Area, AreaDto>();
+//    cfg.CreateMap<Location, LocationDto>();
+//});
+//// only during development, validate your mappings; remove it before release
+//configuration.AssertConfigurationIsValid();
+//// use DI (http://docs.automapper.org/en/latest/Dependency-injection.html) or create the mapper yourself
+//var mapper = configuration.CreateMapper();
 
 
 
