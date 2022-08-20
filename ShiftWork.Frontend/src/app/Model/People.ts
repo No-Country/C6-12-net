@@ -1,4 +1,4 @@
-export class People{ 
+export class PeopleModel{ 
     PersonId?:number;
     FirstName?:string;
     LastName?:string;

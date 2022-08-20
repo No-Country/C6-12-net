@@ -57,8 +57,10 @@ namespace ShiftWork.Backend.Controllers
         // PUT: api/Areas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutArea(int id, Area area)
+        public async Task<IActionResult> PutArea(int id, AreaDto areaDto)
         {
+            var area = _mapper.Map<Area>(areaDto);
+
             if (id != area.AreaId)
             {
                 return BadRequest();
@@ -95,10 +97,9 @@ namespace ShiftWork.Backend.Controllers
                 return Problem("Entity set 'ShiftWorkContext.Area'  is null.");
             }
 
-            areaDto.CreatedDate = DateTime.UtcNow;
-
-
             var area = _mapper.Map<Area>(areaDto);
+
+            area.CreatedDate = DateTime.UtcNow;
 
             _context.Area.Add(area);
             await _context.SaveChangesAsync();

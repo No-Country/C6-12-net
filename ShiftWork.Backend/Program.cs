@@ -22,27 +22,23 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
 //builder.Services.Add(AppDomain.CurrentDomain.GetAssemblies());
 
+var apiCorsPolicy = "ApiCorsPolicy";
+
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(
-    options =>
-    {
-        options.WithOrigins("*");
-    });
+    options.AddPolicy(name: apiCorsPolicy,
+                      builder =>
+                      {
+                          builder.WithOrigins("http://localhost:4200", "https://localhost:4200")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+                          //.WithMethods("OPTIONS", "GET");
+                      });
 });
+
+
 var app = builder.Build();
-
-//var configuration = new MapperConfiguration(cfg =>
-//{
-//    cfg.CreateMap<Area, AreaDto>();
-//    cfg.CreateMap<Location, LocationDto>();
-//});
-//// only during development, validate your mappings; remove it before release
-//configuration.AssertConfigurationIsValid();
-//// use DI (http://docs.automapper.org/en/latest/Dependency-injection.html) or create the mapper yourself
-//var mapper = configuration.CreateMapper();
-
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -59,18 +55,8 @@ else
     app.UseSwaggerUI();
 }
 
-
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
-
-//    var context = services.GetRequiredService<ShiftWorkContext>();
-//    context.Database.EnsureCreated();
-//    //DbInitializer.Initialize(context);
-//}
-
 app.UseHttpsRedirection();
-app.UseCors();
+app.UseCors("ApiCorsPolicy");
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

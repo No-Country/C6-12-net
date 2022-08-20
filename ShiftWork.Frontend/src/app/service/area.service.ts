@@ -39,47 +39,49 @@ export class AreaService {
 
   PostArea(model: AreaModel)
   {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let bodyString = JSON.stringify(model);
-    console.log(bodyString);
     var url = env.apiUrl + this.endPoint;
-    return this.http.post(url, bodyString)
+    return this.http.post(url, model, this.httpOptions)
       .pipe(
         map( (resp: any) => {
-          model.areaId = resp.AreaId;
+          console.log(resp);
+          model.areaId = resp.areaId;
           return model;
         })
       );
   }
 
-  PutArea(model: any)
+  PutArea(model: AreaModel)
+  {
+    //let bodyString = JSON.stringify(model);
+    //console.log(bodyString);
+    var url = env.apiUrl + this.endPoint+ model.areaId;
+    return this.http.put(url,model, this.httpOptions)
+    .pipe(
+      map( (resp: any) => {
+        console.log(resp);
+        //model.areaId = resp.areaId;
+        return model;
+      })
+    );
+  }
+
+  DeleteArea(id: any)
   {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let bodyString = JSON.stringify(model);
-    console.log(bodyString);
-    var url = env.apiUrl + this.endPoint;
-    return this.http.put(url, bodyString, this.httpOptions);
+    var url = env.apiUrl + this.endPoint + id;
+    return this.http.delete(url);
   }
 
-  //DeleteArea(id: string)
+  //DeleteArea(model: any)
   //{
   //  var headers = new Headers();
   //  headers.append('Content-Type', 'application/json');
-  //  var url = env.apiUrl + this.endPoint + id;
+  //  let bodyString = JSON.stringify(model);
+  //  console.log(bodyString);
+  //  var url = env.apiUrl + this.endPoint+ model.AreaId;
   //  return this.http.delete(url);
   //}
-
-  DeleteArea(model: any)
-  {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let bodyString = JSON.stringify(model);
-    console.log(bodyString);
-    var url = env.apiUrl + this.endPoint+ model.AreaId;
-    return this.http.delete(url);
-  }
 
   findByName(name: any): Observable<AreaModel[]> {
     return this.http.get<AreaModel[]>(`${env.apiUrl}?name=${name}`);

@@ -10,6 +10,7 @@ namespace ShiftWork.Backend.Helpers
         {
             CreateMap<AreaDto, Area>();
             CreateMap<LocationDto, Location>();
+            CreateMap<PersonDto, Person>();
         }
     }
 }

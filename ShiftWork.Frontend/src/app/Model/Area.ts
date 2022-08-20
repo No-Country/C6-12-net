@@ -1,8 +1,6 @@
-import { Schedule } from './Schedule';
 export class AreaModel{
-    areaId?:number;
+    areaId:number = 0;
     region?:string;
     country?:string;
-    createdDate?:Date;
-    Schedules: any;
+    createdDate? : Date; 
 }

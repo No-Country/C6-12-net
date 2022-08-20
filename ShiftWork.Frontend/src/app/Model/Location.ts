@@ -1,4 +1,4 @@
-export class Location{
+export class LocationModel{
     LocationId?:number;
     LocationName?:string;
     CreatedDate?:Date;
