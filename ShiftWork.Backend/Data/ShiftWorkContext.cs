@@ -28,6 +28,7 @@ namespace ShiftWork.Backend.Data
         public DbSet<ShiftWork.Backend.Models.Role>? Role { get; set; }
 
         public DbSet<ShiftWork.Backend.Models.TaskShift>? TaskShift { get; set; }
+        public DbSet<ShiftWork.Backend.Models.ScheduleShift>? ScheduleShift { get; set; }
 
     }
 }
