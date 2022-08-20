@@ -4,6 +4,7 @@ import { People } from '../../Model/People';
 import { HttpClient } from '@angular/common/http';
 import { PeopleService } from 'src/app/service/people.service';
 
+
 @Component({
   selector: 'app-dashboard',
   //template: `<ejs-schedule></ejs-schedule>`,

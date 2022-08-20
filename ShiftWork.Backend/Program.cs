@@ -5,8 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ShiftWorkContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShiftWorkContext") ?? throw new InvalidOperationException("Connection string 'ShiftWorkContext' not found.")));
 
-
-
 // Add services to the container.
 
 builder.Services.AddControllers();
