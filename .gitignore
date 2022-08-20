@@ -15,3 +15,5 @@ ShiftWork.Backend/obj/Container/ContainerCreationResult.cache
 ShiftWork.Backend/obj/staticwebassets.pack.sentinel
 *.cache
 *.v2
+*.v2
+*.editorconfig

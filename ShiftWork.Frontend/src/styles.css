@@ -8,3 +8,6 @@
 @import '../node_modules/@syncfusion/ej2-popups/styles/bootstrap.css';
 @import '../node_modules/@syncfusion/ej2-navigations/styles/bootstrap.css';
 @import '../node_modules/@syncfusion/ej2-angular-schedule/styles/bootstrap.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+

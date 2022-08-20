@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { Usuario } from '../../Model/usuario';
+import { People } from '../../Model/People';
 import { HttpClient } from '@angular/common/http';
 import { PeopleService } from 'src/app/service/people.service';
+
 
 @Component({
   selector: 'app-dashboard',
