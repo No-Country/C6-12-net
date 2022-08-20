@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShiftWork.Backend.Data;
+using ShiftWork.Backend.DTOs;
 using ShiftWork.Backend.Models;
 
 namespace ShiftWork.Backend.Controllers
@@ -15,10 +17,12 @@ namespace ShiftWork.Backend.Controllers
     public class PeopleController : ControllerBase
     {
         private readonly ShiftWorkContext _context;
+        private readonly IMapper _mapper;
 
-        public PeopleController(ShiftWorkContext context)
+        public PeopleController(ShiftWorkContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/People
@@ -53,12 +57,14 @@ namespace ShiftWork.Backend.Controllers
         // PUT: api/People/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPerson(int id, Person person)
+        public async Task<IActionResult> PutPerson(int id, PersonDto personDto)
         {
-            if (id != person.PersonId)
+            if (id != personDto.PersonId)
             {
                 return BadRequest();
             }
+
+            var person = _mapper.Map<Person>(personDto);
 
             _context.Entry(person).State = EntityState.Modified;
 
@@ -84,12 +90,15 @@ namespace ShiftWork.Backend.Controllers
         // POST: api/People
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Person>> PostPerson(Person person)
+        public async Task<ActionResult<Person>> PostPerson(PersonDto personDto)
         {
           if (_context.Person == null)
           {
               return Problem("Entity set 'ShiftWorkContext.Person'  is null.");
           }
+
+            var person = _mapper.Map<Person>(personDto);
+
             _context.Person.Add(person);
             await _context.SaveChangesAsync();
 

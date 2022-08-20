@@ -7,63 +7,67 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShiftWork.Backend.Data;
+using ShiftWork.Backend.DTOs;
 using ShiftWork.Backend.Models;
 
 namespace ShiftWork.Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RolesController : ControllerBase
+    public class SchedulesController : ControllerBase
     {
         private readonly ShiftWorkContext _context;
         private readonly IMapper _mapper;
 
-        public RolesController(ShiftWorkContext context, IMapper mapper)
+        public SchedulesController(ShiftWorkContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        // GET: api/Roles
+        // GET: api/Schedules
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Role>>> GetRole()
+        public async Task<ActionResult<IEnumerable<Schedule>>> GetSchedule()
         {
-          if (_context.Role == null)
+          if (_context.Schedule == null)
           {
               return NotFound();
           }
-            return await _context.Role.ToListAsync();
+            return await _context.Schedule.ToListAsync();
         }
 
-        // GET: api/Roles/5
+        // GET: api/Schedules/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Role>> GetRole(string id)
+        public async Task<ActionResult<Schedule>> GetSchedule(string id)
         {
-          if (_context.Role == null)
+          if (_context.Schedule == null)
           {
               return NotFound();
           }
-            var role = await _context.Role.FindAsync(id);
+            var schedule = await _context.Schedule.FindAsync(id);
 
-            if (role == null)
+            if (schedule == null)
             {
                 return NotFound();
             }
 
-            return role;
+            return schedule;
         }
 
-        // PUT: api/Roles/5
+        // PUT: api/Schedules/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRole(string id, Role role)
+        public async Task<IActionResult> PutSchedule(string id, ScheduleDto scheduleDto)
         {
-            if (id != role.RoleId)
+
+            var schedule = _mapper.Map<Schedule>(scheduleDto);
+
+            if (id != schedule.ScheduleId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(role).State = EntityState.Modified;
+            _context.Entry(schedule).State = EntityState.Modified;
 
             try
             {
@@ -71,7 +75,7 @@ namespace ShiftWork.Backend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RoleExists(id))
+                if (!ScheduleExists(id))
                 {
                     return NotFound();
                 }
@@ -84,23 +88,25 @@ namespace ShiftWork.Backend.Controllers
             return NoContent();
         }
 
-        // POST: api/Roles
+        // POST: api/Schedules
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Role>> PostRole(Role role)
+        public async Task<ActionResult<Schedule>> PostSchedule(ScheduleDto scheduleDto)
         {
-          if (_context.Role == null)
+            var schedule = _mapper.Map<Schedule>(scheduleDto);
+
+            if (_context.Schedule == null)
           {
-              return Problem("Entity set 'ShiftWorkContext.Role'  is null.");
+              return Problem("Entity set 'ShiftWorkContext.Schedule'  is null.");
           }
-            _context.Role.Add(role);
+            _context.Schedule.Add(schedule);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (RoleExists(role.RoleId))
+                if (ScheduleExists(schedule.ScheduleId))
                 {
                     return Conflict();
                 }
@@ -110,32 +116,32 @@ namespace ShiftWork.Backend.Controllers
                 }
             }
 
-            return CreatedAtAction("GetRole", new { id = role.RoleId }, role);
+            return CreatedAtAction("GetSchedule", new { id = schedule.ScheduleId }, schedule);
         }
 
-        // DELETE: api/Roles/5
+        // DELETE: api/Schedules/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteRole(string id)
+        public async Task<IActionResult> DeleteSchedule(string id)
         {
-            if (_context.Role == null)
+            if (_context.Schedule == null)
             {
                 return NotFound();
             }
-            var role = await _context.Role.FindAsync(id);
-            if (role == null)
+            var schedule = await _context.Schedule.FindAsync(id);
+            if (schedule == null)
             {
                 return NotFound();
             }
 
-            _context.Role.Remove(role);
+            _context.Schedule.Remove(schedule);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool RoleExists(string id)
+        private bool ScheduleExists(string id)
         {
-            return (_context.Role?.Any(e => e.RoleId == id)).GetValueOrDefault();
+            return (_context.Schedule?.Any(e => e.ScheduleId == id)).GetValueOrDefault();
         }
     }
 }
