@@ -1,4 +1,4 @@
-export class Role{
+export class RoleModel{
     RoleId?:number;
     RoleName?:string;
 }

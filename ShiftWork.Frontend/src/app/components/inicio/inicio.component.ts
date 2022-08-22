@@ -18,7 +18,8 @@ export class InicioComponent implements OnInit {
 ngOnInit(): void {
   this.auth.isAuthenticated$.subscribe(isAuthenticaded=>{
   if(isAuthenticaded){
-  this.router.navigate(['/dashboard'])
+    this.auth.user$.subscribe()
+  this.router.navigate(['/clockshift'])
 }
 })
 }

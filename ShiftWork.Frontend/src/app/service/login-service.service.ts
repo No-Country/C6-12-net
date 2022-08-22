@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { People } from '../Model/People';
+import { PeopleModel } from '../Model/People';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ myApiUrl:string;
     this.myApiUrl="api/People";
     this.myAppUrl="https://localhost:49153/"
    }
-   login(people:People){
+   login(people:PeopleModel){
     return this.http.post(this.myAppUrl+this.myApiUrl,people);
    }
 

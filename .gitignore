@@ -6,7 +6,9 @@
 /.vs/ShiftWorkApp/FileContentIndex/40307d56-8e0e-44cc-89ca-7f0a9686c8c6.vsidx
 /.vs/ShiftWorkApp/FileContentIndex/1253e1f3-7573-4f43-9742-6ec1288bef32.vsidx
 *.vsidx
-/ShiftWorkApp/obj
+/ShiftWor.Backend/obj
+/ShiftWor.Backend/bin
+/ShiftWor.Frontend/node_modules
 *.zip
 .vs/ProjectEvaluation/shiftworkapp.metadata.v2
 .vs/ProjectEvaluation/shiftworkapp.projects.v2
@@ -17,3 +19,12 @@ ShiftWork.Backend/obj/staticwebassets.pack.sentinel
 *.v2
 *.v2
 *.editorconfig
+ShiftWork.Backend/obj/Debug/net6.0/ShiftWork.Backend.csproj.AssemblyReference.cache
+ShiftWork.Backend/obj/Debug/net6.0/ShiftWork.Backend.GeneratedMSBuildEditorConfig.editorconfig
+ShiftWork.Backend/obj/project.assets.json
+ShiftWork.Backend/obj/project.nuget.cache
+ShiftWork.Backend/obj/ShiftWork.Backend.csproj.nuget.dgspec.json
+ShiftWork.Backend/obj/ShiftWork.Backend.csproj.nuget.g.props
+ShiftWork.Backend/obj/staticwebassets.pack.sentinel
+.vs/ProjectEvaluation/shiftworkapp.projects.v2
+.vs/ProjectEvaluation/shiftworkapp.metadata.v2

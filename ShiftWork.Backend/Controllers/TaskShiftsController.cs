@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShiftWork.Backend.Data;
+using ShiftWork.Backend.DTOs;
 using ShiftWork.Backend.Models;
 
 namespace ShiftWork.Backend.Controllers
@@ -15,10 +17,12 @@ namespace ShiftWork.Backend.Controllers
     public class TaskShiftsController : ControllerBase
     {
         private readonly ShiftWorkContext _context;
+        private readonly IMapper _mapper;
 
-        public TaskShiftsController(ShiftWorkContext context)
+        public TaskShiftsController(ShiftWorkContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/TaskShifts
@@ -53,8 +57,11 @@ namespace ShiftWork.Backend.Controllers
         // PUT: api/TaskShifts/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTaskShift(int id, TaskShift taskShift)
+        public async Task<IActionResult> PutTaskShift(int id, TaskShiftDto taskShiftDto)
         {
+
+            var taskShift = _mapper.Map<TaskShift>(taskShiftDto);
+
             if (id != taskShift.TaskShiftId)
             {
                 return BadRequest();
@@ -84,12 +91,15 @@ namespace ShiftWork.Backend.Controllers
         // POST: api/TaskShifts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<TaskShift>> PostTaskShift(TaskShift taskShift)
+        public async Task<ActionResult<TaskShift>> PostTaskShift(TaskShiftDto taskShiftDto)
         {
           if (_context.TaskShift == null)
           {
               return Problem("Entity set 'ShiftWorkContext.TaskShift'  is null.");
           }
+
+          var taskShift = _mapper.Map<TaskShift>(taskShiftDto);
+
             _context.TaskShift.Add(taskShift);
             await _context.SaveChangesAsync();
 

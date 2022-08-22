@@ -1,4 +1,4 @@
-export class Schedule{
+export class ScheduleModel{
     ScheduleId?:number;
     KeyCode?:string;
     Scheduledate?:Date;
