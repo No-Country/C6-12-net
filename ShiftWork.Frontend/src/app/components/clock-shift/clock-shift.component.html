@@ -1,0 +1,85 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">ShiftWork</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/schedule">Schedule</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/people">People</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/area">Area</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/location">Location</a>
+              </li>             
+              <li *ngIf="auth.user$ | async as user" class="nav-item dropdown">                
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{{user.picture}}" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">New Person</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" (click)="logOut()">Sign out</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>        
+    </nav>
+  </header>
+
+<div class="container" style="background-color: #cbc7c7f9;">
+    <div class="row gy-3">
+        <div class="col col-sm">
+            <div class="card p-3 mt-2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Weather</h5>
+                    <small><!-- Start WX Widget Code --><a href="https://www.weatherwx.com/forecast/ny/new+york.html" target="_blank"><img src="https://www.weatherwx.com/fetch-images.php?forecast=zandh&place=new+york&state=ny&country=us&config=png&alt=hwitransparentcolors3&hwvbg=transparent&hwvtc=0000FF" border="0" alt="Click for the latest New York weather forecast."></a><!-- End WX Widget Code --></small>
+                    <h2>{{ time | date: 'hh:mm a' }}</h2>
+                    <div>
+                        <a>Shedule shift Today 7:00 AM - 4:00 PM</a>
+                    </div>
+                    <small *ngIf="clockActive">Hours:{{hours}} Minutes: {{minutes}}</small>
+                    <div *ngIf="!clockActive"> <button class="btn btn-outline-success btn-lg" (click)="startClock()">Start schedule shift</button></div>
+                    <div *ngIf="clockActive"><button class="btn btn-outline-danger btn-lg" (click)="stopClock()">Stop schedule shift</button></div>
+                </div>
+            </div>
+            <div class="card p-3 mt-3 mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Shift</h5>
+                    <br>
+                    <p class="card-text text-decoration-underline">All upcoming shift</p>
+                    <p class="card-text text-decoration-underline">Available shiftw</p>
+                    <p class="card-text text-decoration-underline">My timesheets</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm" style="height:30rem;">
+            <div class="card p-3 mt-2 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Task</h5>
+                    <br>
+                    <p class="card-text text-decoration-underline">My task</p>
+                    <p class="card-text text-decoration-underline">Asigned task</p>
+                    <p class="card-text text-decoration-underline">Shift task</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

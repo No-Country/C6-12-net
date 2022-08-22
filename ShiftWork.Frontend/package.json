@@ -23,8 +23,10 @@
     "@popperjs/core": "^2.11.6",
     "@syncfusion/ej2-angular-schedule": "^20.2.43",
     "bootstrap": "^5.2.0",
+    "font-awesome": "^4.7.0",
     "npm": "^8.17.0",
     "rxjs": "~7.5.0",
+    "syncfusion-javascript": "^20.2.43",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

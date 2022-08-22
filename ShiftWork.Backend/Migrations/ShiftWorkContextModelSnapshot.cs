@@ -166,6 +166,64 @@ namespace ShiftWork.Backend.Migrations
                     b.ToTable("Schedule");
                 });
 
+            modelBuilder.Entity("ShiftWork.Backend.Models.ScheduleShift", b =>
+                {
+                    b.Property<int>("ScheduleShiftId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScheduleShiftId"), 1L, 1);
+
+                    b.Property<int?>("AreaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Deleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GeoLocationEnd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GeoLocationStart")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ScheduleId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Updated")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ScheduleShiftId");
+
+                    b.ToTable("ScheduleShift");
+                });
+
             modelBuilder.Entity("ShiftWork.Backend.Models.TaskShift", b =>
                 {
                     b.Property<int>("TaskShiftId")
