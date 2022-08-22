@@ -25,3 +25,6 @@ ShiftWork.Backend/obj/project.assets.json
 ShiftWork.Backend/obj/project.nuget.cache
 ShiftWork.Backend/obj/ShiftWork.Backend.csproj.nuget.dgspec.json
 ShiftWork.Backend/obj/ShiftWork.Backend.csproj.nuget.g.props
+ShiftWork.Backend/obj/staticwebassets.pack.sentinel
+.vs/ProjectEvaluation/shiftworkapp.projects.v2
+.vs/ProjectEvaluation/shiftworkapp.metadata.v2

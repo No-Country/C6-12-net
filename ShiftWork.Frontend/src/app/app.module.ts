@@ -22,6 +22,8 @@ import { ScheduleShiftComponent } from './components/schedule/scheduleShift.comp
 import { PeopleComponent } from './components/people/people.component';
 import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
+import { TaskShiftComponent } from './components/task-shift/task-shift.component';
+import { ClockShiftComponent } from './components/clock-shift/clock-shift.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-an
     LocationComponent,
     RoleComponent,
     ScheduleShiftComponent,
-    PeopleComponent
+    PeopleComponent,
+    TaskShiftComponent,
+    ClockShiftComponent
   ],
   imports: [
     BrowserModule,
