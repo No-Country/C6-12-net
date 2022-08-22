@@ -19,7 +19,7 @@ ngOnInit(): void {
   this.auth.isAuthenticated$.subscribe(isAuthenticaded=>{
   if(isAuthenticaded){
     this.auth.user$.subscribe()
-  this.router.navigate(['/clockshift'])
+  this.router.navigate(['/dashboard'])
 }
 })
 }
