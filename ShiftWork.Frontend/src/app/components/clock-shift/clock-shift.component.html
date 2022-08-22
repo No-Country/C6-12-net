@@ -50,10 +50,14 @@
             <div class="card p-3 mt-2">
                 <div class="card-body text-center">
                     <h5 class="card-title">Weather</h5>
-                    <small>26°C Sun - New York, NY 11373</small>
-                    <h2>11:48 AM</h2>
-                    <a>Shedule shift Today 7:00 AM - 4:00 PM</a>
-                    <div><button class="btn btn-outline-success btn-lg">Start schedule shift</button></div>
+                    <small><!-- Start WX Widget Code --><a href="https://www.weatherwx.com/forecast/ny/new+york.html" target="_blank"><img src="https://www.weatherwx.com/fetch-images.php?forecast=zandh&place=new+york&state=ny&country=us&config=png&alt=hwitransparentcolors3&hwvbg=transparent&hwvtc=0000FF" border="0" alt="Click for the latest New York weather forecast."></a><!-- End WX Widget Code --></small>
+                    <h2>{{ time | date: 'hh:mm a' }}</h2>
+                    <div>
+                        <a>Shedule shift Today 7:00 AM - 4:00 PM</a>
+                    </div>
+                    <small *ngIf="clockActive">Hours:{{hours}} Minutes: {{minutes}}</small>
+                    <div *ngIf="!clockActive"> <button class="btn btn-outline-success btn-lg" (click)="startClock()">Start schedule shift</button></div>
+                    <div *ngIf="clockActive"><button class="btn btn-outline-danger btn-lg" (click)="stopClock()">Stop schedule shift</button></div>
                 </div>
             </div>
             <div class="card p-3 mt-3 mb-3">
