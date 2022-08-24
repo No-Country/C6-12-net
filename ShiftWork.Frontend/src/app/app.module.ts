@@ -11,12 +11,16 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { AuthModule, AuthService } from '@auth0/auth0-angular';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { environment as env } from '../environments/environment';
-import { AreaComponent } from './components/area/area.component';
-import { LocationComponent } from './components/location/location.component';
-import { RoleComponent } from './components/role/role.component';
-import { PeopleComponent } from './components/people/people.component';
-import { TaskShiftComponent } from './components/task-shift/task-shift.component';
-import { ClockShiftComponent } from './components/clock-shift/clock-shift.component';
+import { AreaComponent } from './components/dashboard/area/area.component';
+import { LocationComponent } from './components/dashboard/location/location.component';
+import { RoleComponent } from './components/dashboard/role/role.component';
+import { PeopleComponent } from './components/dashboard/people/people.component';
+import { TaskShiftComponent } from './components/dashboard/task-shift/task-shift.component';
+import { ClockShiftComponent } from './components/dashboard/clock-shift/clock-shift.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NavBarComponent } from './components/dashboard/nav-bar/nav-bar.component';
+import { SheduleComponent } from './components/dashboard/shedule/shedule.component';
 
 
 @NgModule({
@@ -29,14 +33,16 @@ import { ClockShiftComponent } from './components/clock-shift/clock-shift.compon
     RoleComponent,
     PeopleComponent,
     TaskShiftComponent,
-    ClockShiftComponent
+    ClockShiftComponent,
+    NavBarComponent,
+    SheduleComponent
   ],
   imports: [
     BrowserModule,
    // RecurrenceEditorAllModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
     AuthModule.forRoot({
       ...env.auth
     }),
@@ -45,8 +51,10 @@ import { ClockShiftComponent } from './components/clock-shift/clock-shift.compon
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })
