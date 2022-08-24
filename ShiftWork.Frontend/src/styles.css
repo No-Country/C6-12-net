@@ -1,13 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/@syncfusion/ej2-base/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-buttons/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-calendars/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-dropdowns/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-inputs/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-lists/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-navigations/styles/bootstrap.css';
-@import '../node_modules/@syncfusion/ej2-angular-schedule/styles/bootstrap.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 

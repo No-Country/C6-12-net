@@ -73,16 +73,6 @@ export class AreaService {
     return this.http.delete(url);
   }
 
-  //DeleteArea(model: any)
-  //{
-  //  var headers = new Headers();
-  //  headers.append('Content-Type', 'application/json');
-  //  let bodyString = JSON.stringify(model);
-  //  console.log(bodyString);
-  //  var url = env.apiUrl + this.endPoint+ model.AreaId;
-  //  return this.http.delete(url);
-  //}
-
   findByName(name: any): Observable<AreaModel[]> {
     return this.http.get<AreaModel[]>(`${env.apiUrl}?name=${name}`);
   }
