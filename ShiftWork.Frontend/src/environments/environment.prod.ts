@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
-  apiUrl : 'https://localhost:44318/',
+  production: true,
+  apiUrl : 'http://shiftwork.serpi.com.co/',
   auth:{
     domain: 'dev-ht5zjk2x.us.auth0.com',
     clientId: 'xX6WLqgD6UgYRjZHKtxD5tlkgwVaqzBk',
