@@ -6,11 +6,11 @@
     "\\ShiftWork.Frontend\\src\\app",
     "\\ShiftWork.Frontend\\src\\app\\components",
     "\\ShiftWork.Frontend\\src\\app\\components\\dashboard",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\location",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\people",
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\clock-shift",
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\nav-bar",
     "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\role",
     "\\ShiftWork.Frontend\\src\\app\\service"
   ],
-  "SelectedNode": "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\role\\role.component.ts",
+  "SelectedNode": "\\ShiftWork.Frontend\\src\\app\\service\\role.service.ts",
   "PreviewInSolutionExplorer": false
 }
