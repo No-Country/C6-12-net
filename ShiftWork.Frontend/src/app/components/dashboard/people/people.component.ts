@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class PeopleComponent implements OnInit {
 
-  people: PeopleModel = new PeopleModel();
+  public people: PeopleModel = new PeopleModel();
 
   People: any;
 
@@ -73,6 +73,6 @@ export class PeopleComponent implements OnInit {
       this._router.navigate([decodeURI(this._location.path())]);
     });
   }
-    
+
 
 }

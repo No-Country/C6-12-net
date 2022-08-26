@@ -13,7 +13,7 @@ import { Location } from '@angular/common';
 export class LocationComponent implements OnInit
 {
 
-  location: LocationModel = new LocationModel();
+  location : LocationModel = new LocationModel();
 
   Locations: any;
 
@@ -28,7 +28,7 @@ export class LocationComponent implements OnInit
   }
   private getLocations()
   {
-    this.locationService.getLocation().subscribe(  //Nose cual es el error que no toma el ".Suscribe"
+    this.locationService.GetLocations().subscribe(  //Nose cual es el error que no toma el ".Suscribe"
       (data) => {
         this.Locations = data;
         console.log('locations', data);
@@ -46,14 +46,14 @@ export class LocationComponent implements OnInit
     }
     if (this.Locations.locationId > 0)
     {
-      this.locationService.PutLocation(Location.LocationId,Location.location) //Me pide 2 Argumentos pero nose si el otro es this.locationId y con "this." no me dejaba
+      this.locationService.PutLocation(this.location) //Me pide 2 Argumentos pero nose si el otro es this.locationId y con "this." no me dejaba
         .subscribe(
           resp => console.log(resp)
         );
     }
     else
     {
-      this.locationService.PostLocation(Location.location)
+      this.locationService.PostLocation(this.location)
         .subscribe(
           resp => console.log(resp)
         );
@@ -69,7 +69,7 @@ export class LocationComponent implements OnInit
   deleteLocation(location: LocationModel)
   {
     console.log(location);
-    this.locationService.DeleteLocation(Location.LocationId).subscribe();
+    this.locationService.DeleteLocation(location.LocationId).subscribe();
     this.getLocations();
   }
 

@@ -1,5 +1,5 @@
 export class LocationModel{
-    LocationId?:number;
+    LocationId:number=0;
     LocationName?:string;
     CreatedDate?:Date;
 }
