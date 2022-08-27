@@ -1,6 +1,6 @@
 export class ScheduleShiftModel
 {
-    ScheduleShiftId?: number;
+    ScheduleShiftId: number = 0;
     Subject?: string;
     Description? : string;
     StartTime? : Date;

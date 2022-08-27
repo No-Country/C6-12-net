@@ -1,9 +1,9 @@
 export class ScheduleModel{
-    ScheduleId?:number;
-    KeyCode?:string;
-    Scheduledate?:Date;
-    StartTime?:Date;
-    EndTime?:Date;
-    TagColor?:string;
-    
+    scheduleId?:number;
+    keyCode?:string;
+    scheduledate?:Date;
+    startTime?:Date;
+    endTime?:Date;
+    tagColor?:string;
+
 }
