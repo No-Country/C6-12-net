@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { AreaModel } from 'src/app/Model/Area';
 import { AreaService } from '../../../service/area.service';
 import { Location } from '@angular/common';
@@ -10,8 +10,8 @@ import { Location } from '@angular/common';
   templateUrl: './area.component.html',
   styleUrls: ['./area.component.css']
 })
-export class AreaComponent implements OnInit {
-
+export class AreaComponent implements OnInit
+{
   area : AreaModel = new AreaModel();
 
   Areas : any;
@@ -20,12 +20,14 @@ export class AreaComponent implements OnInit {
      public _router : Router,
      public _location: Location ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.getAreas();
     this.area.areaId = 0;
   }
 
-  private getAreas() {
+  private getAreas()
+  {
     this.areaService.GetAreas().subscribe(
       (data) => {
         this.Areas = data;
@@ -71,12 +73,14 @@ export class AreaComponent implements OnInit {
     this.getAreas();
   }
 
-  refresh(): void {
-		this._router.navigateByUrl("/refresh", { skipLocationChange: true }).then(() => {
-		console.log(decodeURI(this._location.path()));
-		this._router.navigate([decodeURI(this._location.path())]);
-		});
-	}
+  refresh(): void
+  {
+    this._router.navigateByUrl("/refresh", { skipLocationChange: true }).then(() =>
+    {
+	  console.log(decodeURI(this._location.path()));
+	  this._router.navigate([decodeURI(this._location.path())]);
+	});
+  }
 
 
 }

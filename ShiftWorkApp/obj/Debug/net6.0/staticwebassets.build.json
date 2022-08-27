@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "OrL4K1g8ijL20duwH6PjovGGWy9fuj0O4hSmG/9BYk0=",
+  "Source": "ShiftWorkApp",
+  "BasePath": "_content/ShiftWorkApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ShiftWorkApp\\wwwroot",
+      "Source": "ShiftWorkApp",
+      "ContentRoot": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWorkApp\\wwwroot\\",
+      "BasePath": "_content/ShiftWorkApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWorkApp\\wwwroot\\favicon.ico",
+      "SourceId": "ShiftWorkApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWorkApp\\wwwroot\\",
+      "BasePath": "_content/ShiftWorkApp",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}
