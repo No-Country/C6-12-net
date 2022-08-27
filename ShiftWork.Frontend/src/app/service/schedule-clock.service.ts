@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment as env } from '../../environments/environment';
-import { ScheduleModel } from '../Model/Schedule';
+import { ScheduleShiftModel } from '../Model/ScheduleShift';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ScheduleService {
+export class ScheduleClockService {
 
   static get parameters() {
     return [[HttpClient]];
@@ -24,48 +24,48 @@ export class ScheduleService {
 
   response: any;
   data: any;
-  endPoint = 'api/Schedules/';
+  endPoint = 'api/ScheduleShifts/';
 
-  GetSchedules() {
+  GetScheduleShifts() {
     var url = env.apiUrl + this.endPoint;
     return this.http.get(url);
   }
 
-  GetSchedule(id:string) {
+  GetScheduleShift(id:string) {
     var url =  env.apiUrl + this.endPoint + id;
     return this.http.get(url)
       .pipe();
   }
 
-  PostSchedule(model: ScheduleModel)
+  PostScheduleShift(model: ScheduleShiftModel)
   {
     var url = env.apiUrl + this.endPoint;
     return this.http.post(url, model, this.httpOptions)
       .pipe(
         map( (resp: any) => {
           console.log(resp);
-          model.scheduleId = resp.ScheduleId;
+          model.ScheduleShiftId = resp.ScheduleShiftId;
           return model;
         })
       );
   }
 
-  PutSchedule(model: ScheduleModel)
+  PutScheduleShift(model: ScheduleShiftModel)
   {
     //let bodyString = JSON.stringify(model);
     //console.log(bodyString);
-    var url = env.apiUrl + this.endPoint+ model.scheduleId;
+    var url = env.apiUrl + this.endPoint+ model.ScheduleShiftId;
     return this.http.put(url,model, this.httpOptions)
     .pipe(
       map( (resp: any) => {
         console.log(resp);
-        //model.scheduleId = resp.scheduleId;
+        //model.areaId = resp.areaId;
         return model;
       })
     );
   }
 
-  DeleteSchedule(id: any)
+  DeleteScheduleShift(id: any)
   {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
