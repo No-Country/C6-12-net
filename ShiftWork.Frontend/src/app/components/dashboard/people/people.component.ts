@@ -22,7 +22,7 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPeople();
-    this.people.PersonId = 0;
+    this.people.personId = 0;
   }
 
   private getPeople() {
@@ -36,12 +36,12 @@ export class PeopleComponent implements OnInit {
 
   saveData(form: NgForm) {
     console.log(this.people);
-    console.log(this.people.PersonId);
+    console.log(this.people.personId);
     if (form.invalid) {
       console.log('Formulario Invalido');
       return;
     }
-    if (this.people.PersonId > 0) {
+    if (this.people.personId > 0) {
       this.peopleService.PutPerson(this.people)
         .subscribe(
           resp => console.log(resp)
@@ -63,7 +63,7 @@ export class PeopleComponent implements OnInit {
 
   deletePeople(people: PeopleModel) {
     console.log(people);
-    this.peopleService.DeletePerson(this.people.PersonId).subscribe();
+    this.peopleService.DeletePerson(this.people.personId).subscribe();
     this.getPeople();
   }
 

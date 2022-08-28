@@ -24,7 +24,7 @@ export class LocationComponent implements OnInit
   ngOnInit(): void
   {
     this.getLocations();
-    this.location.LocationId = 0;
+    this.location.locationId = 0;
   }
   private getLocations()
   {
@@ -39,7 +39,7 @@ export class LocationComponent implements OnInit
   saveData(form: NgForm)
   {
     console.log(this.location);
-    console.log(this.location.LocationId);
+    console.log(this.location.locationId);
     if (form.invalid) {
       console.log('Formulario Invalido');
       return;
@@ -69,7 +69,7 @@ export class LocationComponent implements OnInit
   deleteLocation(location: LocationModel)
   {
     console.log(location);
-    this.locationService.DeleteLocation(location.LocationId).subscribe();
+    this.locationService.DeleteLocation(location.locationId).subscribe();
     this.getLocations();
   }
 

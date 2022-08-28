@@ -1,9 +1,9 @@
 export class PeopleModel{
-    PersonId:number = 0;
-    FirstName?:string;
-    LastName?:string;
-    DocumentNumber?:string;
-    CreatedDate?:Date;
-    Email?:string;
-    PhoneNumber?:number;
+    personId:number = 0;
+    firstName?:string;
+    lastName?:string;
+    documentNumber?:string;
+    createdDate?:Date;
+    email?:string;
+    phoneNumber?:number;
 }

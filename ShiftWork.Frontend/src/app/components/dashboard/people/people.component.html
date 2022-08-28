@@ -1,33 +1,64 @@
 
-<form>
-    <div class="card">
-        <div class="card-header"><h2 class="card-title">Profile User</h2></div>
-        <div class="card-body">
-            <div class="mb-3">
-                <label for="region" class="form-label">Firs Name</label> 
-                <input id="firstname" name="firstname" type="text" class="form-control" required="required">
-            </div>
-            <div class="mb-3">
-                <label for="lastname" class="form-label">Last Name</label> 
-                <input id="lastname" name="lastname" type="text" class="form-control" required="required">
-            </div> 
-            <div class="mb-3">
-                <label for="documentnumber" class="form-label">Document Number</label> 
-                <input id="documentnumber" name="documentnumber" type="text" class="form-control" required="required">
-            </div> 
-            <div class="mb-3">
-                <label for="email" class="form-label">E-Mail</label> 
-                <input id="email" name="email" type="text" class="form-control" required="required">
-            </div> 
-            <div class="mb-3">
-                <label for="phonenumber" class="form-label">Phone Number</label> 
-                <input id="phonenumber" name="phonenumber" type="text" class="form-control" required="required">
-            </div> 
-            <div class="mb-3">
-                <div class="offset-1">
-                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
+<form (ngSubmit)="saveData(frm)" #frm="ngForm">
+  <div class="container">
+    <div class="card offset">
+        <div class="card-header"><h2 class="card-title">Profile</h2>
+
+          <div>
+            <ul class="dropdown btn dropdown-menu-dark">
+              <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Select Profile
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li *ngFor="let item of People" (click)="selectedPeople(item)"><a class="dropdown-item" >{{item.firstName}}</a></li>
+              </ul>
+            </ul>
+          </div>
+
         </div>
-    </div>
-  </form>
+      <div class="card-body">
+            <div class="mb-3">
+                <label for="region" class="form-label">First Name</label>
+                <input id="firstname" name="firstname" type="text" class="form-control"
+                [(ngModel)]="people.firstName"
+                required="required">
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input id="lastname" name="lastname" type="text" class="form-control"
+                [(ngModel)]="people.lastName"
+                required="required">
+            </div>
+            <div class="mb-3">
+                <label for="documentnumber" class="form-label">Document Number</label>
+                <input id="documentnumber" name="documentnumber" type="text" class="form-control"
+                [(ngModel)]="people.documentNumber" required="required">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-Mail</label>
+                <input id="email" name="email" type="text" class="form-control"
+                [(ngModel)]="people.email"
+                required="required">
+            </div>
+            <div class="mb-3">
+                <label for="phonenumber" class="form-label">Phone Number</label>
+                <input id="phonenumber" name="phonenumber" type="text" class="form-control"
+                [(ngModel)]="people.firstName"
+                required="required">
+            </div>
+            <div class="mb-3">
+              <div class="offset-3">
+                  <button name="submit" type="submit" class="btn btn-primary  me-2">Submit</button>
+                  <button name="delete"
+                  type="button"
+                  class="btn btn-danger me-2"
+                  (click)="deletePeople(people)">Delete</button>
+              </div>
+          </div>
+          <div class="mb-3">
+          <small>{{people.createdDate}}</small>
+          </div>
+      </div>
+  </div>
+</div>
+</form>
