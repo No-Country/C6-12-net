@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4Ui1UGP8OjMj0SUe6QDuFNBhDjgqEwETyljK/CQEmCmSFFtGoKhTx8HGA60AgWsX+QN5dKgYvowu6JoxNtisBg==",
+  "dgSpecHash": "Y3O2kHu3pZmvi1605FUnF31u24ei2VzVCPZCnWYiET8u+kXQulSljCQbUIsWFKc7eI0T2Sf/6+wBCl2NwZbW+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\source\\repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\Source\\Repos\\No-Country\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

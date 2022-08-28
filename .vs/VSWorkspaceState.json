@@ -9,7 +9,8 @@
     "\\ShiftWork.Frontend\\src\\app\\components",
     "\\ShiftWork.Frontend\\src\\app\\components\\dashboard",
     "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\area",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\location"
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\location",
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\people"
   ],
   "PreviewInSolutionExplorer": false
 }
