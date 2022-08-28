@@ -1,17 +1,40 @@
-<form>
-    <div class="card">
-        <div class="card-header"><h2 class="card-title">Location</h2></div>
-        
-        <div class="card-body">
-        <div class="mb-3">
-            <label for="locationname" class="form-label">Location Name</label> 
-            <input id="locationname" name="locationname" type="text" class="form-control" required="required">
-        </div>
-        <div class="mb-3">
-            <div class="offset-1">
-                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+<form (ngSubmit)="saveData(frm)" #frm="ngForm">
+  <div class="container">
+    <div class="card offset">
+        <div class="card-header"><h2 class="card-title">Location</h2>
+
+            <div>
+              <a class="dropdown btn dropdown-menu-dark">
+                <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Location
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li *ngFor="let item of Locations" (click)="selectedLocation(item)"><a class="dropdown-item" >{{item.locationName}}</a></li>
+                </ul>
+              </a>
             </div>
+
+          <div class="card-body">
+            <div class="mb-3">
+                <label for="locationname" class="form-label">Location Name</label>
+                <input id="locationname" name="locationname" type="text" class="form-control"
+                [(ngModel)]="location.locationName"
+                required="required">
+            </div>
+            <div class="mb-3">
+              <div class="offset-3">
+                  <button name="submit" type="submit" class="btn btn-primary  me-2">Submit</button>
+                  <button name="delete"
+                  type="button"
+                  class="btn btn-danger me-2"
+                  (click)="deleteLocation(location)">Delete</button>
+              </div>
+          </div>
+          <div class="mb-3">
+          <small>{{location.createdDate}}</small>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-  </form>
+  </div>
+</form>

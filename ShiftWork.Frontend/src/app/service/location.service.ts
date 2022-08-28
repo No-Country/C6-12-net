@@ -45,7 +45,7 @@ export class LocationService {
       .pipe(
         map( (resp: any) => {
           console.log(resp);
-          model.LocationId = resp.LocationId;
+          model.locationId = resp.LocationId;
           return model;
         })
       );
@@ -55,7 +55,7 @@ export class LocationService {
   {
     //let bodyString = JSON.stringify(model);
     //console.log(bodyString);
-    var url = env.apiUrl + this.endPoint+ model.LocationId;
+    var url = env.apiUrl + this.endPoint+ model.locationId;
     return this.http.put(url,model, this.httpOptions)
     .pipe(
       map( (resp: any) => {
