@@ -4,11 +4,11 @@
 
     <div>
       <a class="dropdown btn dropdown-menu-dark">
-        <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Select Location
-        </a>
+        </ul>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-          <li *ngFor="let item of Locations" (click)="selectedLocation(item)"><a class="dropdown-item">{{item.region}}</a></li>
+          <li *ngFor="let item of Locations" (click)="selectedLocation(item)"><ul class="dropdown-item">{{item.region}}</ul></li>
         </ul>
       </a>
     </div>
