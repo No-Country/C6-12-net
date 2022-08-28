@@ -1,6 +1,6 @@
 export class TaskShiftModel{
-    TaskShiftId:number=0;
-    TaskShiftName?:string;
-    Comment?:string;
-    CreatedDate?:string;
+    taskShiftId:number=0;
+    taskShiftName?:string;
+    comment?:string;
+    createdDate?:string;
 }
