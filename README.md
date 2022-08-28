@@ -12,3 +12,7 @@
 npm install
 npm ci
 npm start
+
+docker build -t waguirre82/shiftworkfrotend .
+
+docker run -d -it -p 80:80/tcp --name shiftworkfrotend waguirre82/shiftworkfrotend:latest
