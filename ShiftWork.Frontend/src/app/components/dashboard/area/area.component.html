@@ -9,7 +9,7 @@
                 Select Area
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li *ngFor="let item of Areas" (click)="selectedArea(item)"><a class="dropdown-item" >{{item.region}}</a></li>
+                <li *ngFor="let item of Areas" (click)="selectedArea(item)"><ul class="dropdown-item" >{{item.region}}</ul></li>
               </ul>
             </ul>
           </div>
