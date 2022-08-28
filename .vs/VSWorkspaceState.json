@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\ShiftWork.Backend",
+    "\\ShiftWork.Backend\\Controllers",
     "\\ShiftWork.Frontend",
     "\\ShiftWork.Frontend\\src",
     "\\ShiftWork.Frontend\\src\\app",
     "\\ShiftWork.Frontend\\src\\app\\components",
     "\\ShiftWork.Frontend\\src\\app\\components\\dashboard",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\location",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\people",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\role",
-    "\\ShiftWork.Frontend\\src\\app\\service"
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\area",
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\location"
   ],
-  "SelectedNode": "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\role\\role.component.ts",
   "PreviewInSolutionExplorer": false
 }
