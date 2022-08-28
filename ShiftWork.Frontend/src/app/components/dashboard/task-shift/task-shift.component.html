@@ -1,1 +1,49 @@
-<p>task-shift works!</p>
+//<p>task-shift works!</p>
+
+<form (ngSubmit)="saveData(frm)" #frm="ngForm">
+    <div class="container">
+      <div class="card offset">
+          <div class="card-header"><h2 class="card-title">TaskShift</h2>
+  
+            <div>
+              <ul class="dropdown btn dropdown-menu-dark">
+                <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select TaskShift
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li *ngFor="let item of TaskShift" (click)="selectedTaskShift(item)"><ul class="dropdown-item" >{{item.region}}</ul></li>
+                </ul>
+              </ul>
+            </div>
+  
+          </div>
+          <div class="card-body">
+              <div class="mb-3">
+                  <label for="region" class="form-label">Region</label>
+                  <input id="region" name="region" type="text" class="form-control"
+                  [(ngModel)]="TaskShift.region"
+                  required="required">
+              </div>
+              <div class="mb-3">
+              <label for="country" class="form-label">Country</label>
+                  <input id="country" name="country" type="text" class="form-control"
+                  [(ngModel)]="TaskShift.country"
+                  required="required">
+              </div>
+  
+              <div class="mb-3">
+                  <div class="offset-3">
+                      <button name="submit" type="submit" class="btn btn-primary  me-2">Submit</button>
+                      <button name="delete"
+                      type="button"
+                      class="btn btn-danger me-2"
+                      (click)="deleteTaskShift(taskShift)">Delete</button>
+                  </div>
+              </div>
+              <div class="mb-3">
+              <small>{{TaskShift.createdDate}}</small>
+              </div>
+          </div>
+      </div>
+    </div>
+    </form>

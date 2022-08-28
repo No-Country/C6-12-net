@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\ShiftWork.Backend",
-    "\\ShiftWork.Backend\\Controllers",
+    "\\ShiftWork.Backend\\Helpers",
+    "\\ShiftWork.Backend\\Properties",
     "\\ShiftWork.Frontend",
     "\\ShiftWork.Frontend\\src",
     "\\ShiftWork.Frontend\\src\\app",
     "\\ShiftWork.Frontend\\src\\app\\components",
     "\\ShiftWork.Frontend\\src\\app\\components\\dashboard",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\area",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\location",
-    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\people"
+    "\\ShiftWork.Frontend\\src\\app\\components\\dashboard\\people",
+    "\\ShiftWork.Frontend\\src\\app\\components\\inicio"
   ],
+  "SelectedNode": "\\ShiftWork.Backend\\Controllers\\TaskShiftsController.cs",
   "PreviewInSolutionExplorer": false
 }
