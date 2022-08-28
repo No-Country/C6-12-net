@@ -28,7 +28,7 @@ export class LocationComponent implements OnInit
   }
   private getLocations()
   {
-    this.locationService.GetLocations().subscribe(  //Nose cual es el error que no toma el ".Suscribe"
+    this.locationService.GetLocations().subscribe(
       (data) => {
         this.Locations = data;
         console.log('locations', data);
@@ -46,7 +46,7 @@ export class LocationComponent implements OnInit
     }
     if (this.Locations.locationId > 0)
     {
-      this.locationService.PutLocation(this.location) //Me pide 2 Argumentos pero nose si el otro es this.locationId y con "this." no me dejaba
+      this.locationService.PutLocation(this.location)
         .subscribe(
           resp => console.log(resp)
         );
