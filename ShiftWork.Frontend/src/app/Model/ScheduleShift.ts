@@ -1,19 +1,19 @@
 export class ScheduleShiftModel
 {
-    ScheduleShiftId: number = 0;
-    Subject?: string;
-    Description? : string;
-    StartTime? : Date;
-    EndTime? : Date;
-    PersonId? : number;
-    ScheduleId? : number;
-    AreaId? : number;
-    LocationId? : number;
-    IsActive? : boolean
-    IsDeleted? : boolean;
-    GeoLocationStart? : string;
-    GeoLocationEnd?: string;
-    Created? : Date;
-    Updated? : Date;
-    Deleted? : Date;
+    scheduleShiftId: number = 0;
+    subject?: string;
+    description? : string;
+    startTime? : Date;
+    endTime? : Date;
+    personId? : number;
+    scheduleId? : number;
+    areaId? : number;
+    locationId? : number;
+    isActive? : boolean
+    isDeleted? : boolean;
+    geoLocationStart? : string;
+    geoLocationEnd?: string;
+    created? : Date;
+    updated? : Date;
+    deleted? : Date;
 }

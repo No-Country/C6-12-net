@@ -44,12 +44,12 @@ export class AreaComponent implements OnInit
       console.log('Formulario Invalido');
       return;
     }
-    if (this.area.areaId > 0)
+    if (this.area.areaId == 0)
     {
       this.areaService.PutArea(this.area)
       .subscribe(
         resp => console.log(resp)
-      );
+      ); 
     }
     else
     {
@@ -81,6 +81,4 @@ export class AreaComponent implements OnInit
 	  this._router.navigate([decodeURI(this._location.path())]);
 	});
   }
-
-
 }
