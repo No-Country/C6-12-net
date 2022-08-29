@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl : 'http://localhost:8080/',
+  apiUrl : 'http://44.202.165.91/',
   auth:{
     domain: 'dev-ht5zjk2x.us.auth0.com',
     clientId: 'xX6WLqgD6UgYRjZHKtxD5tlkgwVaqzBk',
