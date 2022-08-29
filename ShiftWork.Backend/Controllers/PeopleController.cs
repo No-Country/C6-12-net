@@ -98,7 +98,7 @@ namespace ShiftWork.Backend.Controllers
           }
 
             var person = _mapper.Map<Person>(personDto);
-
+            person.CreatedDate = DateTime.Now;
             _context.Person.Add(person);
             await _context.SaveChangesAsync();
 

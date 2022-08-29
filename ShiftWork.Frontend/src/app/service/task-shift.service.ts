@@ -24,7 +24,7 @@ export class TaskShiftService {
 
   response: any;
   data: any;
-  endPoint = 'api/TaskShift/';  //No encontre donde Buscar el nombre del endPoint
+  endPoint = 'api/TaskShifts/';  //No encontre donde Buscar el nombre del endPoint
 
   GetTaskShift() {
     var url = env.apiUrl + this.endPoint;

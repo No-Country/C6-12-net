@@ -1,4 +1,4 @@
-//<p>task-shift works!</p>
+
 
 <form (ngSubmit)="saveData(frm)" #frm="ngForm">
   <div class="container">
@@ -10,22 +10,22 @@
                 Select TaskShift
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li *ngFor="let item of TaskShift" (click)="selectedTaskShift(item)"><ul class="dropdown-item" >{{item.region}}</ul></li>
+                <li *ngFor="let item of TaskShift" (click)="selectedTaskShift(item)"><ul class="dropdown-item" >{{item.taskShiftName}}</ul></li>
               </ul>
             </ul>
           </div>
         </div>
         <div class="card-body">
             <div class="mb-3">
-                <label for="region" class="form-label">Region</label>
-                <input id="region" name="region" type="text" class="form-control"
-                [(ngModel)]="TaskShift.region"
+                <label for="taskShiftName" class="form-label">Task Description</label>
+                <input id="taskShiftName" name="taskShiftName" type="text" class="form-control"
+                [(ngModel)]="taskShift.taskShiftName"
                 required="required">
             </div>
             <div class="mb-3">
-            <label for="country" class="form-label">Country</label>
-                <input id="country" name="country" type="text" class="form-control"
-                [(ngModel)]="TaskShift.country"
+            <label for="comment" class="form-label">Note</label>
+                <input id="comment" name="comment" type="text" class="form-control"
+                [(ngModel)]="taskShift.comment"
                 required="required">
             </div>
 
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="mb-3">
-            <small>{{TaskShift.createdDate}}</small>
+            <small>{{taskShift.createdDate}}</small>
             </div>
         </div>
     </div>
