@@ -89,14 +89,49 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
       });
   }
 
-
-
-  
   ngOnDestroy() {
     clearInterval(this.intervalId);
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  private getNowUTC() {
+    const now = new Date();
+    return new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
+  }
+
+  private getUTC(Date_:Date) {
+    const now = Date_; //new Date();
+    return new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
+  }
+
+  private getfromUTC(Date_:Date) {
+    const now = Date_; //new Date();
+    return new Date(now.getTime() - (now.getTimezoneOffset() * 60000));
+  }
+
+  private getShiftbyPersonId(personId: any)
+  {
+    console.log(personId);
+    this.scheduleClockService.GetScheduleShifts().subscribe(
+      (data:any) => {
+        var shifts = data.filter((t:ScheduleShiftModel) => t.personId == personId 
+        && t.isActive == true);
+        console.log(shifts);
+        if (shifts?.length)
+        {
+          this.scheduleShift = shifts[0];
+          console.log(this.scheduleShift);
+          this.clockActive = true;
+          this.startTime = this.getfromUTC(new Date(shifts[0].startTime));//new Date(shifts[0].startTime);
+
+          console.log("startTime",shifts[0].startTime);
+          console.log("converted",this.startTime);
+          console.log(new Date);
+        }
+      }
+    )
   }
 
   private getAreas()
@@ -136,11 +171,12 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     var obj = this.People.filter(function(data:PeopleModel) {
       return data.personId==id;
     });
-
     this.person = obj[0];
-
-    console.log(this.person);
+    this.getShiftbyPersonId(this.person.personId);
+    //console.log(this.person);
   }
+
+
 
   onAreaChange(eventValue: any)
   {
@@ -157,9 +193,6 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   {
     var id = eventValue.target.value;
 
-    //var obj_ = this.Locations.find((t:LocationModel) => t.locationId === id);
-    //console.log("change",obj_);
-
     var obj = this.Locations.filter(function(data:LocationModel) {
       return data.locationId==id;
     });
@@ -169,8 +202,6 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     console.log(this.location);
 
   }
-
-
 
   logOut(){
     this.auth.logout();
@@ -216,7 +247,10 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     this.scheduleShift.isActive = false;
 
     this.scheduleClockService.PutScheduleShift(this.scheduleShift).subscribe(
-      resp => console.log(resp)
+      resp => {
+        console.log(resp)
+        this.scheduleShift = new ScheduleShiftModel();
+      }
     );
   }
 

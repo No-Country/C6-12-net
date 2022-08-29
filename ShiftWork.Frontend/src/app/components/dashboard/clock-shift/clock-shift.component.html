@@ -8,20 +8,20 @@
                     <h2>{{ time | date: 'hh:mm a' }}</h2>
                     <div class="gy-2">
                         <div class="row p-2">
-                            <select class="form-select" (change)="onProfileChange($event)" aria-label="Default select example">
-                                <option selected>Open this select profile</option>
+                            <select class="form-select" [(ngModel)]="scheduleShift.personId" (change)="onProfileChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select profile</option>
                                 <option *ngFor="let item of People" value="{{item.personId}}">{{item.firstName}} {{item.lastName}}</option>
                               </select>
                         </div>
                         <div class="row p-2">
-                            <select class="form-select" (change)="onAreaChange($event)" aria-label="Default select example">
-                                <option selected>Open this select area</option>
+                            <select class="form-select" [(ngModel)]="scheduleShift.areaId" (change)="onAreaChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select area</option>
                                 <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}}</option>
                               </select>
                         </div>
                         <div class="row p-2">
-                            <select class="form-select" (change)="onLocationChange($event)" aria-label="Default select example">
-                                <option selected>Open this select location</option>
+                            <select class="form-select" [(ngModel)]="scheduleShift.locationId" (change)="onLocationChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select location</option>
                                 <option *ngFor="let item of Locations" value="{{item.locationId}}">{{item.locationName}}</option>
                               </select>
                         </div>

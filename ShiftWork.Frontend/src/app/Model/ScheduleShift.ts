@@ -3,7 +3,7 @@ export class ScheduleShiftModel
     scheduleShiftId: number = 0;
     subject?: string;
     description? : string;
-    startTime? : Date;
+    startTime!: Date;
     endTime? : Date;
     personId? : number;
     scheduleId? : number;
