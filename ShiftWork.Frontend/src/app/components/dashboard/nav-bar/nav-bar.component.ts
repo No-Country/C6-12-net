@@ -21,7 +21,6 @@ export class NavBarComponent implements OnInit {
       var personId = '1';
       peopleService.GetPerson(personId).subscribe(
         (data) => {
-		//this.userLog = data.firstName;
           console.log('person',data);
         }
       )
