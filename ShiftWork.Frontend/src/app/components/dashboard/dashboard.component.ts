@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
 import { HttpClient } from '@angular/common/http';
 import { PeopleService } from 'src/app/service/people.service';
 
@@ -12,7 +11,7 @@ import { PeopleService } from 'src/app/service/people.service';
 })
 export class DashboardComponent implements OnInit {
   profileJson: string = "";
-  constructor(public auth: AuthService, protected http: HttpClient,
+  constructor(protected http: HttpClient,
     peopleService: PeopleService
     ) { 
 
@@ -25,14 +24,14 @@ export class DashboardComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.auth.user$.subscribe(
-      (profile) => (this.profileJson = JSON.stringify(profile, null, 2)),    
-    );
-    console.log(this.profileJson)
+    //this.auth.user$.subscribe(
+    //  (profile) => (this.profileJson = JSON.stringify(profile, null, 2)),    
+    //);
+    //console.log(this.profileJson)
 
   }
   logOut(){
-    this.auth.logout();
+    //this.auth.logout();
     console.log(this.auth.user$)
   }
 }

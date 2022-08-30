@@ -33,9 +33,9 @@
                 <a class="nav-link" routerLink="/dashboard/eventshift">Shift</a>
               </li>       
                     
-              <li *ngIf="auth.user$ | async as user" class="nav-item dropdown">                
+              <li *ngIf="userLog" class="nav-item dropdown">                
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="{{user.picture}}" alt="mdo" width="32" height="32" class="rounded-circle">
+                 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">New Person</a></li>
