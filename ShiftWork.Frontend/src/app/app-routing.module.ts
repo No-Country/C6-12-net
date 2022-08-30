@@ -7,7 +7,7 @@ import { LocationComponent } from './components/dashboard/location/location.comp
 import { ClockShiftComponent } from './components/dashboard/clock-shift/clock-shift.component';
 import { TaskShiftComponent } from './components/dashboard/task-shift/task-shift.component';
 import { PeopleComponent } from './components/dashboard/people/people.component';
-import { SheduleComponent } from './components/dashboard/shedule/shedule.component';
+import { SheduleComponent } from './components/dashboard/shedule/shedule.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },

@@ -129,5 +129,21 @@ namespace ShiftWork.Backend.Controllers
         {
             return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
         }
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> loginPerson(LoginDto loginDto)
+        {
+            try
+            {
+                var personValidated = await _context.Person.Where(x => x.Email == loginDto.Email && x.DocumentNumber == loginDto.DocumentNumber).FirstAsync();
+                return Ok();
+              
+
+            }catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+     
+        }
     }
 }

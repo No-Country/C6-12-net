@@ -9,6 +9,5 @@
         public DateTime CreatedDate { get; set; }
         public string Email { get; set; } = string.Empty;
         public int PhoneNumber { get; set; }
-
     }
 }

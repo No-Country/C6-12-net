@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { InicioComponent } from './components/inicio/inicio.component';
-// Import the module from the SDK
-import { AuthModule, AuthService } from '@auth0/auth0-angular';
+
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { environment as env } from '../environments/environment';
 import { AreaComponent } from './components/dashboard/area/area.component';
@@ -20,6 +19,7 @@ import { ClockShiftComponent } from './components/dashboard/clock-shift/clock-sh
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavBarComponent } from './components/dashboard/nav-bar/nav-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SheduleComponent } from './components/dashboard/shedule/shedule.component';
 
 
@@ -43,9 +43,7 @@ import { SheduleComponent } from './components/dashboard/shedule/shedule.compone
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AuthModule.forRoot({
-      ...env.auth
-    }),
+   ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable

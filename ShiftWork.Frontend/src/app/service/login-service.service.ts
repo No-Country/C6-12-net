@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { PeopleModel } from '../Model/People';
+import { environment as env } from '../../environments/environment';
+import { personalData } from '../data';
+import { map } from 'rxjs';
+import { LoginModel } from '../Model/Login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
-myAppUrl:string;
-myApiUrl:string;
+  endPoint = 'api/People/login';
   constructor(private http:HttpClient) {
-    this.myApiUrl="api/People";
-    this.myAppUrl="https://localhost:49153/"
+    }
+    public httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    response: any;
+    data: any
+   login(model:LoginModel){
+    var url = env.apiUrl + this.endPoint;
+    console.log(model);
+    return this.http.post(url,model,this.httpOptions).pipe(map((resp:any)=>{
+      console.log(resp);
+      return resp; 
+    })
+    );
    }
-   login(people:PeopleModel){
-    return this.http.post(this.myAppUrl+this.myApiUrl,people);
-   }
-
-
 }

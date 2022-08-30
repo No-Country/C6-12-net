@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService, AuthModule } from '@auth0/auth0-angular';
+import { NgForm } from '@angular/forms';
 import { LoginServiceService } from '../../service/login-service.service';
+import { PeopleModel } from '../../Model/People';
+import { LoginModel } from '../../Model/Login';
+
+
 
 
 @Component({
@@ -10,24 +14,33 @@ import { LoginServiceService } from '../../service/login-service.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+login :LoginModel = new LoginModel();
 
-  constructor(public auth: AuthService,
-    private router:Router,
-    private loginService:LoginServiceService) {}
 
-ngOnInit(): void {
-  this.auth.isAuthenticated$.subscribe(isAuthenticaded=>{
-  if(isAuthenticaded){
-    this.auth.user$.subscribe()
-  this.router.navigate(['/dashboard'])
-}
-})
-}
-login(){
-this.auth.loginWithRedirect ()
 
+
+constructor(private loginService:LoginServiceService,
+            private router:Router){}
+ngOnInit(): void {}
+
+log(form:NgForm){
+  console.log("click")
+  if(form.invalid){
+    console.log('Formulario invalido');
+    return;
+  }else{
+    this.loginService.login(this.login).subscribe(data=>this.router.navigate(['/dashboard']));
+  }
+
+  }
+ 
+ 
 }
 
-}
+
+
+
+
+
 
 
