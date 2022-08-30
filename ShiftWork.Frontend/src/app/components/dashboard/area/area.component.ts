@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AreaModel } from 'src/app/Model/Area';
 import { AreaService } from '../../../service/area.service';
 import { Location } from '@angular/common';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-area',

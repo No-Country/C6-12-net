@@ -5,7 +5,7 @@ export class ScheduleModel
     taskShiftId?: number;
     keyCode?: string;
     scheduledate?: string;
-    startTime?: string;
+    startTime?: Date;
     endTime?: string;
     areaId? : number;
     locationId? : number;

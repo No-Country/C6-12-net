@@ -21,6 +21,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavBarComponent } from './components/dashboard/nav-bar/nav-bar.component';
 import { SheduleComponent } from './components/dashboard/shedule/shedule.component';
+import { EventShiftComponent } from './components/dashboard/event-shift/event-shift.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SheduleComponent } from './components/dashboard/shedule/shedule.compone
     TaskShiftComponent,
     ClockShiftComponent,
     NavBarComponent,
-    SheduleComponent
+    SheduleComponent,
+    EventShiftComponent
   ],
   imports: [
     BrowserModule,

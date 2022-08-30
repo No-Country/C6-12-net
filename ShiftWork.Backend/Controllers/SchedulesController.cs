@@ -57,7 +57,7 @@ namespace ShiftWork.Backend.Controllers
         // PUT: api/Schedules/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSchedule(string id, ScheduleDto scheduleDto)
+        public async Task<IActionResult> PutSchedule(int id, ScheduleDto scheduleDto)
         {
 
             var schedule = _mapper.Map<Schedule>(scheduleDto);
@@ -139,7 +139,7 @@ namespace ShiftWork.Backend.Controllers
             return NoContent();
         }
 
-        private bool ScheduleExists(string id)
+        private bool ScheduleExists(int id)
         {
             return (_context.Schedule?.Any(e => e.ScheduleId == id)).GetValueOrDefault();
         }

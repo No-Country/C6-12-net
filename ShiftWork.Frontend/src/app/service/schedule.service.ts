@@ -44,7 +44,7 @@ export class ScheduleService {
       .pipe(
         map( (resp: any) => {
           console.log(resp);
-          model.scheduleId = resp.ScheduleId;
+          model.scheduleId = resp.scheduleId;
           return model;
         })
       );
