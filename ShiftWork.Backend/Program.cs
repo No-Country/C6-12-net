@@ -29,7 +29,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: apiCorsPolicy,
                       builder =>
                       {
-                          builder.WithOrigins("http://localhost:4200", "https://localhost:4200")
+                          builder.WithOrigins("http://localhost:4200", 
+                              "https://localhost:4200",
+                              "https://main.d23hrr0t3ac536.amplifyapp.com")
                             .AllowAnyHeader()
                             .AllowAnyMethod()
                             .AllowCredentials();
@@ -55,7 +57,7 @@ else
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseCors("ApiCorsPolicy");
 app.UseAuthorization();
 app.MapControllers();
