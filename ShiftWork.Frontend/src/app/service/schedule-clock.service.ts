@@ -44,8 +44,8 @@ export class ScheduleClockService {
       .pipe(
         map( (resp: any) => {
           console.log(resp);
-          model.ScheduleShiftId = resp.ScheduleShiftId;
-          return model;
+          model = resp;
+          return resp;
         })
       );
   }
@@ -54,7 +54,7 @@ export class ScheduleClockService {
   {
     //let bodyString = JSON.stringify(model);
     //console.log(bodyString);
-    var url = env.apiUrl + this.endPoint+ model.ScheduleShiftId;
+    var url = env.apiUrl + this.endPoint+ model.scheduleShiftId;
     return this.http.put(url,model, this.httpOptions)
     .pipe(
       map( (resp: any) => {

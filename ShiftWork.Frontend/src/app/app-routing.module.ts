@@ -7,7 +7,9 @@ import { LocationComponent } from './components/dashboard/location/location.comp
 import { ClockShiftComponent } from './components/dashboard/clock-shift/clock-shift.component';
 import { TaskShiftComponent } from './components/dashboard/task-shift/task-shift.component';
 import { PeopleComponent } from './components/dashboard/people/people.component';
-import { SheduleComponent } from './components/dashboard/shedule/shedule.component'
+import { SheduleComponent } from './components/dashboard/shedule/shedule.component';
+import { EventShiftComponent } from './components/dashboard/event-shift/event-shift.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -20,6 +22,7 @@ const routes: Routes = [
     { path: 'location', component: LocationComponent },
     { path: 'clockshift', component: ClockShiftComponent },
     { path: 'taskshift', component: TaskShiftComponent },
+    { path: 'eventshift', component: EventShiftComponent },
   ]},
   {path:'**',redirectTo:'inicio',pathMatch:'full'}
 ];

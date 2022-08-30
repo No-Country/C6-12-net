@@ -93,13 +93,14 @@ namespace ShiftWork.Backend.Controllers
         [HttpPost]
         public async Task<ActionResult<TaskShift>> PostTaskShift(TaskShiftDto taskShiftDto)
         {
-          if (_context.TaskShift == null)
-          {
-              return Problem("Entity set 'ShiftWorkContext.TaskShift'  is null.");
-          }
+            if (_context.TaskShift == null)
+            {
+                return Problem("Entity set 'ShiftWorkContext.TaskShift'  is null.");
+            }
 
-          var taskShift = _mapper.Map<TaskShift>(taskShiftDto);
+            var taskShift = _mapper.Map<TaskShift>(taskShiftDto);
 
+            taskShift.CreatedDate = DateTime.Now;
             _context.TaskShift.Add(taskShift);
             await _context.SaveChangesAsync();
 

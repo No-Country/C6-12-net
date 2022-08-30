@@ -6,8 +6,28 @@
                     <h5 class="card-title">Weather</h5>
                     <small><!-- Start WX Widget Code --><a href="https://www.weatherwx.com/forecast/ny/new+york.html" target="_blank"><img src="https://www.weatherwx.com/fetch-images.php?forecast=zandh&place=new+york&state=ny&country=us&config=png&alt=hwitransparentcolors3&hwvbg=transparent&hwvtc=0000FF" border="0" alt="Click for the latest New York weather forecast."></a><!-- End WX Widget Code --></small>
                     <h2>{{ time | date: 'hh:mm a' }}</h2>
-                    <div>
-                        <a>Shedule shift Today 7:00 AM - 4:00 PM</a>
+                    <div class="gy-2">
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="scheduleShift.personId" (change)="onProfileChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select profile</option>
+                                <option *ngFor="let item of People" value="{{item.personId}}">{{item.firstName}} {{item.lastName}}</option>
+                              </select>
+                        </div>
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="scheduleShift.areaId" (change)="onAreaChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select area</option>
+                                <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}}</option>
+                              </select>
+                        </div>
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="scheduleShift.locationId" (change)="onLocationChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select location</option>
+                                <option *ngFor="let item of Locations" value="{{item.locationId}}">{{item.locationName}}</option>
+                              </select>
+                        </div>
+
+
+                        
                     </div>
                     <small *ngIf="clockActive">Hours:{{hours}} Minutes: {{minutes}}</small>
                     <div *ngIf="!clockActive"> <button class="btn btn-outline-success btn-lg" (click)="startClock()">Start schedule shift</button></div>

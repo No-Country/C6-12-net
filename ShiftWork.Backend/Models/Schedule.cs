@@ -2,9 +2,9 @@
 {
 	public class Schedule
 	{
-		public string ScheduleId { get; set; }
+		public int ScheduleId { get; set; }
 		public int PersonId { get; set; }
-		public string TaskShiftId { get; set; }
+		public int TaskShiftId { get; set; }
 		public string KeyCode { get; set; }
 		public DateTime Scheduledate { get; set; }
 		public DateTime StartTime { get; set; }

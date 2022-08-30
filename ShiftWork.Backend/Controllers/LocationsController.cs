@@ -101,6 +101,7 @@ namespace ShiftWork.Backend.Controllers
           }
             _context.Entry(location).State = EntityState.Modified;
 
+            location.CreatedDate = DateTime.Now;
             _context.Location.Add(location);
             await _context.SaveChangesAsync();
 

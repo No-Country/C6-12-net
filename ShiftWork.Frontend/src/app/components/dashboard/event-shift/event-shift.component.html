@@ -1,0 +1,76 @@
+<div class="container mt-10" style="background-color: #cbc7c7f9;">
+    <div class="row gy-3">
+        <div class="col col-sm">
+            <div class="card p-3 mt-2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Weather</h5>
+                    <small><!-- Start WX Widget Code --><a href="https://www.weatherwx.com/forecast/ny/new+york.html" target="_blank"><img src="https://www.weatherwx.com/fetch-images.php?forecast=zandh&place=new+york&state=ny&country=us&config=png&alt=hwitransparentcolors3&hwvbg=transparent&hwvtc=0000FF" border="0" alt="Click for the latest New York weather forecast."></a><!-- End WX Widget Code --></small>
+                    <div class="gy-2">
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="schedule.personId" (change)="onProfileChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select profile</option>
+                                <option *ngFor="let item of People" value="{{item.personId}}">{{item.firstName}} {{item.lastName}}</option>
+                              </select>
+                        </div>
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="schedule.areaId" (change)="onAreaChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select area</option>
+                                <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}}</option>
+                              </select>
+                        </div>
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="schedule.locationId" (change)="onLocationChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select location</option>
+                                <option *ngFor="let item of Locations" value="{{item.locationId}}">{{item.locationName}}</option>
+                              </select>
+                        </div>
+
+                        <div class="row p-2">
+                            <select class="form-select" [(ngModel)]="schedule.taskShiftId" (change)="onTaskShiftsChange($event)" aria-label="Default select example">
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select Task</option>
+                                <option *ngFor="let item of TaskShifts" value="{{item.taskShiftId}}">{{item.taskShiftName}}</option>
+                              </select>
+                        </div>
+
+                        <div class="row p-2">
+                            <label for="scheduledate" class="form-label">Shift Date</label>
+                            <input id="scheduledate" type="date" pattern="\d{4}-\d{2}-\d{2}" name="scheduledate" class="form-control"
+                            [(ngModel)]="schedule.scheduledate"
+                            required="required">
+                        </div>                        
+                        
+                        <div class="row p-2">
+                            <label for="startTime" class="form-label">Start Time</label>
+                            <input id="startTime" name="startTime" type="time" class="form-control"
+                            [(ngModel)]="schedule.startTime"
+                            required="required">
+                        </div>
+
+                        <div class="row p-2">
+                            <label for="endTime" class="form-label">End Time</label>
+                            <input id="endTime" name="endTime" type="time" class="form-control"
+                            [(ngModel)]="schedule.endTime"
+                            required="required">
+                        </div>
+
+                        <div class="row p-2">
+                            <label for="keyCode" class="form-label">Subject</label>
+                            <input id="keyCode" name="keyCode" type="text" class="form-control"
+                            [(ngModel)]="schedule.keyCode"
+                            required="required">
+                        </div>
+
+                        <div class="row p-2">
+                            <label for="tagColor" class="form-label">Tag Color</label>
+                            <input id="tagColor" name="tagColor" type="color" class="form-control"
+                            [(ngModel)]="schedule.tagColor"
+                            required="required">
+                        </div>
+                        
+                    </div>
+                    <div> <button class="btn btn-outline-success btn-lg" (click)="saveShift()">Save shift</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1318,3 +1318,13 @@ C:\Users\usuario\source\repos\No-Country\C6-12-net\ShiftWork.Backend\obj\Debug\n
 C:\Users\usuario\source\repos\No-Country\C6-12-net\ShiftWork.Backend\obj\Debug\net6.0\ShiftWork.Backend.pdb
 C:\Users\usuario\source\repos\No-Country\C6-12-net\ShiftWork.Backend\obj\Debug\net6.0\ShiftWork.Backend.genruntimeconfig.cache
 C:\Users\usuario\source\repos\No-Country\C6-12-net\ShiftWork.Backend\obj\Debug\net6.0\ref\ShiftWork.Backend.dll
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\release\web.config
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\web.config
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\appsettings.Development.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\appsettings.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\release\appsettings.Development.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\release\appsettings.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\release\ShiftWork.Backend.deps.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\release\ShiftWork.Backend.runtimeconfig.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\ShiftWork.Backend.deps.json
+C:\projects\C6-12-net\ShiftWork.Backend\bin\Debug\net6.0\release\ShiftWork.Backend.runtimeconfig.json
