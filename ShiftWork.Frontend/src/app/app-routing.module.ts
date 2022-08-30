@@ -10,6 +10,7 @@ import { PeopleComponent } from './components/dashboard/people/people.component'
 import { SheduleComponent } from './components/dashboard/shedule/shedule.component';
 import { EventShiftComponent } from './components/dashboard/event-shift/event-shift.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   {path:'inicio',component:InicioComponent},
