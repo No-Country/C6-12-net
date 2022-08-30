@@ -30,8 +30,5 @@ export class DashboardComponent implements OnInit {
     //console.log(this.profileJson)
 
   }
-  logOut(){
-    //this.auth.logout();
-    console.log(this.auth.user$)
-  }
+  
 }
