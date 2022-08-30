@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
 import { HttpClient } from '@angular/common/http';
 import { PeopleService } from 'src/app/service/people.service';
 import { ScheduleShiftModel } from 'src/app/Model/ScheduleShift';
@@ -45,7 +44,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   public minutes : any;
   
 
-  constructor(public auth: AuthService, protected http: HttpClient,
+  constructor( protected http: HttpClient,
     private peopleService: PeopleService, private taskService : TaskShiftService,
     private areaService: AreaService, private locationService: LocationService,
     private scheduleClockService: ScheduleClockService
@@ -203,10 +202,6 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
 
   }
 
-  logOut(){
-    this.auth.logout();
-    console.log(this.auth.user$)
-  }
 
   startClock()
   {
