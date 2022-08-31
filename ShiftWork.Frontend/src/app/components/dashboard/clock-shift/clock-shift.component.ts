@@ -213,6 +213,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   onProfileChange(eventValue: any)
   {
     var id = eventValue.target.value;
+    this.clockActive = false;
     var obj = this.People.filter(function(data:PeopleModel) {
       return data.personId==id;
     });
