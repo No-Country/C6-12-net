@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\William Aguirre\\source\\repos\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {}
+    "C:\\projects\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\William Aguirre\\source\\repos\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {
+    "C:\\projects\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\William Aguirre\\source\\repos\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
+        "projectUniqueName": "C:\\projects\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
         "projectName": "ShiftWork.Backend",
-        "projectPath": "C:\\Users\\William Aguirre\\source\\repos\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
-        "packagesPath": "C:\\Users\\William Aguirre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\William Aguirre\\source\\repos\\C6-12-net\\ShiftWork.Backend\\obj\\",
+        "projectPath": "C:\\projects\\C6-12-net\\ShiftWork.Backend\\ShiftWork.Backend.csproj",
+        "packagesPath": "C:\\Users\\wagui\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\C6-12-net\\ShiftWork.Backend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\William Aguirre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\wagui\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

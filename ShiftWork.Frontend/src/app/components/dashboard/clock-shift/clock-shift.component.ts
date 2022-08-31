@@ -13,6 +13,8 @@ import { AreaModel } from 'src/app/Model/Area';
 import { LocationModel } from 'src/app/Model/Location';
 import { AreaService } from 'src/app/service/area.service';
 import { LocationService } from 'src/app/service/location.service';
+import { ScheduleService } from 'src/app/service/schedule.service';
+
 
 @Component({
   selector: 'app-clock-shift',
@@ -35,6 +37,8 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   People : any;
   Locations: any;
   Areas: any;//Array<AreaModel> = [] ;
+  Shifts: any;
+  Schedules: any;
 
   public clockActive : any = false;
   public startTime = new Date();
@@ -47,7 +51,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   constructor( protected http: HttpClient,
     private peopleService: PeopleService, private taskService : TaskShiftService,
     private areaService: AreaService, private locationService: LocationService,
-    private scheduleClockService: ScheduleClockService
+    private scheduleClockService: ScheduleClockService, private scheduleService: ScheduleService 
     ) { 
 
       var personId = '1';
@@ -76,6 +80,8 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     this.getAreas();
     this.getPeople();
     this.getLocations();
+    this.getShifts();
+    this.getSchedules();
 
     // Using RxJS Timer
     this.subscription = timer(0, 1000)
@@ -163,6 +169,46 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     );
   }
 
+  private getShifts(id:any = 0)
+  {
+    this.scheduleClockService.GetScheduleShifts().subscribe(
+      (data:any) => {
+        if (id > 0)
+        {
+          this.Shifts = data.filter(function(data:ScheduleShiftModel)
+          {
+            return data.personId == id;
+          })
+        }
+        else
+        {
+          this.Shifts = data;
+        }
+        console.log('shifts', data);
+      }
+    );
+  }
+
+  private getSchedules(id: any = 0)
+  {
+    this.scheduleService.GetSchedules().subscribe(
+      (data:any) => {
+        if (id > 0)
+        {
+          this.Schedules = data.filter(function(data:ScheduleModel)
+          {
+            return data.personId == id;
+          })
+        }
+        else
+        {
+          this.Schedules = data;
+        }
+        console.log('schedules', data);
+      }
+    );
+  }
+
 
   onProfileChange(eventValue: any)
   {
@@ -172,7 +218,10 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     });
     this.person = obj[0];
     this.getShiftbyPersonId(this.person.personId);
-    //console.log(this.person);
+
+    this.getShifts(id);
+    this.getSchedules(id);
+
   }
 
 
