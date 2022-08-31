@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment as env } from '../../environments/environment';
+import { PeopleModel } from '../Model/People';
+import { map,Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,27 +35,38 @@ export class PeopleService {
 
   GetPerson(id:string) {
     var url =  env.apiUrl + this.endPoint + id;
-    return this.http.get(url);
+    return this.http.get(url)
+      .pipe();
   }
 
-  PostPerson(model: any)
+  PostPerson(model: PeopleModel)
   {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let bodyString = JSON.stringify(model);
-    console.log(bodyString);
     var url = env.apiUrl + this.endPoint;
-    return this.http.post(url, bodyString, this.httpOptions);  
+    return this.http.post(url, model, this.httpOptions)
+      .pipe(
+        map( (resp: any) => {
+          console.log(resp);
+          model.personId = resp.personId;
+          return model;
+        })
+      );
   }
 
-  PutPerson(model: any)
+  PutPerson(model: PeopleModel)
   {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let bodyString = JSON.stringify(model);
-    console.log(bodyString);
-    var url = env.apiUrl + this.endPoint;
-    return this.http.put(url, bodyString, this.httpOptions);  
+    var url = env.apiUrl + this.endPoint+ model.personId;
+    return this.http.put(url,model, this.httpOptions)
+    .pipe(
+      map( (resp: any) => {
+        console.log(resp);
+        //model.areaId = resp.areaId;
+        return model;
+      })
+    );
+  }
+
+  findByName(name: any): Observable<PeopleModel[]> {
+    return this.http.get<PeopleModel[]>(`${env.apiUrl}?name=${name}`);
   }
 
   //DeletePerson(id: string)
@@ -64,13 +77,11 @@ export class PeopleService {
   //  return this.http.delete(url);  
   //}
 
-  DeletePerson(model: any)
+  DeletePerson(id: any)
   {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let bodyString = JSON.stringify(model);
-    console.log(bodyString);
-    var url = env.apiUrl + this.endPoint+ model.PersonId;
-    return this.http.delete(url);  
+    var url = env.apiUrl + this.endPoint + id;
+    return this.http.delete(url);
   }
 }
