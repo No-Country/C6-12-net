@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,7 @@ import { SheduleComponent } from './components/dashboard/shedule/shedule.compone
 import { EventShiftComponent } from './components/dashboard/event-shift/event-shift.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,24 +38,16 @@ import { EventShiftComponent } from './components/dashboard/event-shift/event-sh
     ClockShiftComponent,
     NavBarComponent,
     SheduleComponent,
-    EventShiftComponent
+    EventShiftComponent,
   ],
   imports: [
     BrowserModule,
-   // RecurrenceEditorAllModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
    ReactiveFormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
- 
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

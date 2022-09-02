@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'inicio',component:InicioComponent},
   {path:'dashboard',component:DashboardComponent, children:[
     {path:'',component: ClockShiftComponent },
-    {path:'schedule',component:SheduleComponent},
+    { path:'schedule',component:SheduleComponent},
     { path: 'people', component: PeopleComponent },
     { path: 'area', component: AreaComponent },
     { path: 'location', component: LocationComponent },
