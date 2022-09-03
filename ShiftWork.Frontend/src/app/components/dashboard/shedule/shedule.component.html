@@ -8,6 +8,7 @@
         <div class="row p-2">
           <select class="form-select" [(ngModel)]="schedule.personId" (change)="onProfileChange($event)" aria-label="Default select example">
               <option [ngValue]="undefined" [disabled]="true" selected>Select profile</option>
+              <option [ngValue]="undefined" selected>All profiles</option>
               <option *ngFor="let item of People" value="{{item.personId}}">{{item.firstName}} {{item.lastName}}</option>
             </select>
         </div>
