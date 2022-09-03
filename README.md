@@ -5,6 +5,8 @@
 
 	*Url app:[ Follow this link](https://main.d23hrr0t3ac536.amplifyapp.com/)
 
+    usuario: demo, clave: demo
+
 ***Technology**
 
     *FrontEnd: Angular 14.0*
