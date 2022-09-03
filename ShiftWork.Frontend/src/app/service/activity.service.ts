@@ -7,19 +7,20 @@ export const INITIAL_EVENTS: EventInput[] = [
   {
     id: createEventId(),
     title: 'All-day event',
-    start: TODAY_STR,
-    end: TODAY_STR+ 'T2:00:00',
+    start: TODAY_STR +'T08:00:00',
+    end: TODAY_STR+ 'T14:00:00',
     allDay: false,
-    color: 'orange'
+    backgroundColor: 'orange'
 
   },
   {
     id: createEventId(),
     title: 'Timed event',
-    start: TODAY_STR + 'T3:00:00',
-    end: TODAY_STR + 'T2:00:00',
+    start: TODAY_STR + 'T06:00:00',
+    end: TODAY_STR + 'T07:00:00',
     allDay: false,
-    backgroundColor: 'red'
+    backgroundColor: 'red',
+
 
   }
 ];

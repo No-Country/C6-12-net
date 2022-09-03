@@ -4,9 +4,9 @@ export class ScheduleModel
     personId? : number;
     taskShiftId?: number;
     keyCode?: string;
-    scheduledate?: string;
-    startTime?: Date;
-    endTime?: string;
+    scheduledate: string = "";
+    startTime: string = "";
+    endTime: string = "";
     areaId? : number;
     locationId? : number;
     tagColor?: string;

@@ -15,14 +15,14 @@
       <div class='demo-app-sidebar-section'>
         <p class="card-text text-decoration-underline">All upcoming shift</p>
         <ul>
-            <li *ngFor="let r of Schedules">{{r.keyCode}} <b>{{r.scheduledate | date}}</b><i> {{r.startTime.substr(10,8)}}-{{r.endTime.substr(10,8)}}</i></li>
+            <li *ngFor="let r of Schedules">{{r.keyCode}} <b>{{r.scheduledate | date}}</b><i> {{r.startTime}}-{{r.endTime}}</i></li>
         </ul>
 
       </div>
     </div>
   
     <div class='demo-app-main'>
-      <full-calendar #calendarSch
+      <full-calendar #calendarEl
         *ngIf='calendarVisible'
         [options]='calendarOptions'
       ></full-calendar>

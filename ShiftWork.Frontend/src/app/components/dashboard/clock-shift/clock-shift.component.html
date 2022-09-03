@@ -40,7 +40,7 @@
                     <br>
                     <p class="card-text text-decoration-underline">All upcoming shift</p>
                     <ul>
-                        <li *ngFor="let r of Schedules">{{r.keyCode}} <small>{{r.scheduledate | date}}</small><br><small> {{r.startTime.substr(10,8)}}-{{r.endTime.substr(10,8)}}</small></li>
+                        <li *ngFor="let r of Schedules">{{r.keyCode}} <small>{{r.scheduledate | date}}</small><br><small> {{r.startTime}}-{{r.endTime}}</small></li>
                     </ul>
 
                     <p class="card-text text-decoration-underline">Time Sheets</p>
