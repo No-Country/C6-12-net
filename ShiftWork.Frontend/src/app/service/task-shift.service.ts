@@ -34,8 +34,7 @@ export class TaskShiftService {
 
   GetTaskShiftID(id:string) {
     var url =  env.apiUrl + this.endPoint + id;
-    return this.http.get(url)
-      .pipe();
+    return this.http.get(url);
   }
 
   PostTaskShift(model: TaskShiftModel)

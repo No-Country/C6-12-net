@@ -60,6 +60,9 @@
                     <h5 class="card-title">Task</h5>
                     <br>
                     <p class="card-text text-decoration-underline">My task</p>
+                    <ul>
+                      <li *ngFor="let r of Tasks">{{r.taskShiftName}}</li>
+                  </ul>
                 </div>
             </div>
         </div>

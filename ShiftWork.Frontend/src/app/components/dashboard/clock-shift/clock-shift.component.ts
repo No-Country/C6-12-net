@@ -39,6 +39,8 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   Areas: any;//Array<AreaModel> = [] ;
   Shifts: any;
   Schedules: any;
+  Tasks: any =[{taskShiftId: "",
+    taskShiftName: ""}];
 
   public clockActive : any = false;
   public startTime = new Date();
@@ -46,13 +48,13 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
   public clockTime = new Date();
   public hours : any;
   public minutes : any;
-  
+
 
   constructor( protected http: HttpClient,
     private peopleService: PeopleService, private taskService : TaskShiftService,
     private areaService: AreaService, private locationService: LocationService,
-    private scheduleClockService: ScheduleClockService, private scheduleService: ScheduleService 
-    ) { 
+    private scheduleClockService: ScheduleClockService, private scheduleService: ScheduleService
+    ) {
 
       var personId = '1';
       peopleService.GetPerson(personId).subscribe(
@@ -61,7 +63,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
         }
       )
     }
-    
+
 
   ngOnInit(): void {
     this.intervalId = setInterval(() => {
@@ -72,7 +74,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
         const b = this.startTime.getTime();
         var dif = a-b;
         const totalMinutes = ((a - b) / (1000 * 60) % 60);
-        this.hours = Math.floor(totalMinutes / 60);          
+        this.hours = Math.floor(totalMinutes / 60);
         this.minutes = Math.round(totalMinutes % 60);
       }
     }, 1000);
@@ -121,7 +123,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     console.log(personId);
     this.scheduleClockService.GetScheduleShifts().subscribe(
       (data:any) => {
-        var shifts = data.filter((t:ScheduleShiftModel) => t.personId == personId 
+        var shifts = data.filter((t:ScheduleShiftModel) => t.personId == personId
         && t.isActive == true);
         console.log(shifts);
         if (shifts?.length)
@@ -167,6 +169,25 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
         console.log('locations', data);
       }
     );
+  }
+
+  private getTaskbyId(id:any)
+  {
+    this.taskService.GetTaskShiftID(id).subscribe(
+      (data) => {
+        console.log('task',data);
+        this.Tasks.push(data);
+      }
+    );
+  }
+
+  private getTask()
+  {
+    this.Tasks = [];
+    this.Schedules.forEach((r:ScheduleModel) => {
+        this.getTaskbyId(r.taskShiftId);
+    });
+    console.log('tasks',this.Tasks);
   }
 
   private getShifts(id:any = 0)
@@ -222,6 +243,7 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
 
     this.getShifts(id);
     this.getSchedules(id);
+    this.getTask();
 
   }
 
