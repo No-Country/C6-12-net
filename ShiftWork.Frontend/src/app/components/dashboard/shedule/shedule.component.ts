@@ -170,6 +170,8 @@ export class SheduleComponent implements OnInit {
     this.scheduleService.GetSchedules().subscribe(
       (data:any) => {
         if (id > 0) {
+            
+          this.Schedules =  data.filter((val:any) => {return val.personId == id});
 
           data.filter((val:any) => {return val.personId == id}).forEach((r:ScheduleModel) => {
 
@@ -179,7 +181,7 @@ export class SheduleComponent implements OnInit {
             this.events_.push({
               title: r.keyCode,
               start: dateSTR + 'T' + r.startTime + ':00',
-              end: dateSTR + 'T' + r.startTime + ':00',
+              end: dateSTR + 'T' + r.endTime + ':00',
               backgroundColor: r.tagColor,
               borderColor: "#3c8dbc"
             })
@@ -202,7 +204,7 @@ export class SheduleComponent implements OnInit {
             this.events_.push({
               title: r.keyCode,
               start: dateSTR + 'T' + r.startTime + ':00',
-              end: dateSTR + 'T' + r.startTime + ':00',
+              end: dateSTR + 'T' + r.endTime + ':00',
               backgroundColor: r.tagColor,
               borderColor: "#3c8dbc"
             })
@@ -263,21 +265,13 @@ export class SheduleComponent implements OnInit {
     ...this.calendarOptions,
     events: myevent
   }
-
-
-    //let calendar = new Calendar(this.calendarRef.nativeElement,this.calendarOptions);
-
-
-
   }
 
   readEvents() {
-    console.log('reading...');
     const scheduleObservable = new Observable(observer => {
       setTimeout(() => {
         this.scheduleService.GetSchedules().subscribe(
           (result: any) => {
-            //console.log('readed', result);
             result.forEach((r: ScheduleModel) => {
               var date = new Date((Date.parse(r.scheduledate)));
               let dateSTR = date.toISOString().replace(/T.*$/, '')
