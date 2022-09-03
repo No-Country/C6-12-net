@@ -61,7 +61,7 @@
                     <br>
                     <p class="card-text text-decoration-underline">My task</p>
                     <ul>
-                      <li *ngFor="let r of Tasks">{{r.taskShiftName}}</li>
+                      <li *ngFor="let r of Tasks"><b>{{r.taskShiftName}}</b><i>: {{r.comment}}</i></li>
                   </ul>
                 </div>
             </div>
