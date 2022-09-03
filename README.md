@@ -3,7 +3,7 @@
 ***About***
     This application allows you to schedule staff in the daily shift work, it also allows workers to record their time of entry and exit, the system calculates the timecard of the day.
 
-	*Url app: [https://main.d23hrr0t3ac536.amplifyapp.com/](Follow this link)*
+	*Url app:[ Follow this link](https://main.d23hrr0t3ac536.amplifyapp.com/)
 
 ***Technology**
 
