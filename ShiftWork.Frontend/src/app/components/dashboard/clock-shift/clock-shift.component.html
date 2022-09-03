@@ -16,7 +16,7 @@
                         <div class="row p-2">
                             <select class="form-select" [(ngModel)]="scheduleShift.areaId" (change)="onAreaChange($event)" aria-label="Default select example">
                                 <option [ngValue]="undefined" [disabled]="true" selected>Select area</option>
-                                <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}}</option>
+                                <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}}/{{item.country}}</option>
                               </select>
                         </div>
                         <div class="row p-2">

@@ -15,12 +15,12 @@
                         <div class="row p-2">
                             <select class="form-select" [(ngModel)]="schedule.areaId" (change)="onAreaChange($event)" aria-label="Default select example">
                                 <option [ngValue]="undefined" [disabled]="true" selected>Select area</option>
-                                <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}}</option>
+                                <option *ngFor="let item of Areas" value="{{item.areaId}}">{{item.region}} / {{item.country}}</option>
                               </select>
                         </div>
                         <div class="row p-2">
                             <select class="form-select" [(ngModel)]="schedule.locationId" (change)="onLocationChange($event)" aria-label="Default select example">
-                                <option [ngValue]="undefined" [disabled]="true" selected>Select location</option>
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select department</option>
                                 <option *ngFor="let item of Locations" value="{{item.locationId}}">{{item.locationName}}</option>
                               </select>
                         </div>
@@ -37,8 +37,8 @@
                             <input id="scheduledate" type="date" pattern="\d{4}-\d{2}-\d{2}" name="scheduledate" class="form-control"
                             [(ngModel)]="schedule.scheduledate"
                             required="required">
-                        </div>                        
-                        
+                        </div>
+
                         <div class="row p-2">
                             <label for="startTime" class="form-label">Start Time</label>
                             <input id="startTime" name="startTime" type="time" class="form-control"
@@ -66,7 +66,7 @@
                             [(ngModel)]="schedule.tagColor"
                             required="required">
                         </div>
-                        
+
                     </div>
                     <div> <button class="btn btn-outline-success btn-lg" (click)="saveShift()">Save shift</button></div>
                 </div>
