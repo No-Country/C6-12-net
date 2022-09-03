@@ -171,23 +171,23 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
     );
   }
 
-  private getTaskbyId(id:any)
+  private getTaskbyId(schedule:any)
   {
-    this.taskService.GetTaskShiftID(id).subscribe(
+    this.taskService.GetTaskShiftID(schedule.taskShiftId).subscribe(
       (data) => {
         console.log('task',data);
+        let taskshift = new TaskShiftModel();
         this.Tasks.push(data);
+
       }
     );
   }
 
-  private getTask()
+  private getTask(schedules: any)
   {
-    this.Tasks = [];
-    this.Schedules.forEach((r:ScheduleModel) => {
-        this.getTaskbyId(r.taskShiftId);
+    schedules.forEach((r:ScheduleModel) => {
+        this.getTaskbyId(r);
     });
-    console.log('tasks',this.Tasks);
   }
 
   private getShifts(id:any = 0)
@@ -220,6 +220,9 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
           {
             return data.personId == id;
           })
+          this.Tasks = [];
+          this.getTask(data.filter((val: any) =>
+          { return val.personId == id}));
         }
         else
         {
@@ -243,7 +246,6 @@ export class ClockShiftComponent implements OnInit, OnDestroy {
 
     this.getShifts(id);
     this.getSchedules(id);
-    this.getTask();
 
   }
 
