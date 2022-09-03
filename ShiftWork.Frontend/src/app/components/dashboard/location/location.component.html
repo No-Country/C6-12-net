@@ -1,12 +1,12 @@
 <form (ngSubmit)="saveData(frm)" #frm="ngForm">
   <div class="container">
     <div class="card offset">
-        <div class="card-header"><h2 class="card-title">Location</h2>
+        <div class="card-header"><h2 class="card-title">Department</h2>
 
             <div>
               <ul class="dropdown btn dropdown-menu-dark">
                 <a class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Select Location
+                  Select Department
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                   <li *ngFor="let item of Locations" (click)="selectedLocation(item)"><a class="dropdown-item" >{{item.locationName}}</a></li>

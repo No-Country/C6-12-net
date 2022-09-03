@@ -21,13 +21,13 @@
                         </div>
                         <div class="row p-2">
                             <select class="form-select" [(ngModel)]="scheduleShift.locationId" (change)="onLocationChange($event)" aria-label="Default select example">
-                                <option [ngValue]="undefined" [disabled]="true" selected>Select location</option>
+                                <option [ngValue]="undefined" [disabled]="true" selected>Select department</option>
                                 <option *ngFor="let item of Locations" value="{{item.locationId}}">{{item.locationName}}</option>
                               </select>
                         </div>
 
 
-                        
+
                     </div>
                     <small *ngIf="clockActive">Hours:{{hours}} Minutes: {{minutes}}</small>
                     <div *ngIf="!clockActive"> <button class="btn btn-outline-success btn-lg" (click)="startClock()">Start schedule shift</button></div>
