@@ -3,11 +3,16 @@
 ***About***
     This application allows you to schedule staff in the daily shift work, it also allows workers to record their time of entry and exit, the system calculates the timecard of the day.
 
+	*Url app: https://main.d23hrr0t3ac536.amplifyapp.com/*
+
 ***Tecnology**
 
     *FrontEnd: Angular 14.0*
     *Backend: NetCore 6.0*
     *Database: Sql Server*
+    *schedule: full calendar 6.0*
+    *Containders: Docker*
+ 
 
 ***Team Members**
 
